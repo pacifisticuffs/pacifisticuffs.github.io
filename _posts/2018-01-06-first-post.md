@@ -14,4 +14,4 @@ I'm going to use a Bootstrap theme to make things pretty, which hopefully I can 
 
 Also the [Flyers](https://www.nhl.com/flyers) just won a solid game. Woohoo!
 
-That's it for now. Next up will figuring out how to get Jekyll running locally so I can get a design integrated and make this a bit prettier to look at.
+That's it for now. Next up will be to figure out how to get Jekyll running locally so I can get a design integrated and make this a bit prettier to look at.
