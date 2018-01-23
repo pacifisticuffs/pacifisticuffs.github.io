@@ -1,10 +1,16 @@
 ---
-layout: default
+layout: duh
 title: TIMMEH!
 ---
-<div class="blurb">
-	<h1>THIS IS A WEBSITE HELLO</h1>
-	<p>
-    I am following a tutorial to get this running.
-  </p>
-</div><!-- /.blurb -->
+{% for post in site.posts %}
+<article class="col-md-4">
+	<header class="entry-header">
+		<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+		<h3>{{ post.date | date: "%A %B %e, %Y" }}</h3>
+	</header>
+	<div class="entry-content">
+		{{ post.excerpt }}
+		<p><a class="btn btn-secondary" href="{{ post.url }}" role="button">Continue reading &raquo;</a></p>
+</div>
+</article>
+{% endfor %}
