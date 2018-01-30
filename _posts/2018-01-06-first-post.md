@@ -1,7 +1,7 @@
 ---
-layout: post
 title: "This thing I made"
 date: 2018-01-06
+categories: [setup, about, jekyll, personal]
 ---
 
 I've been out of tech for a few years now, working on a dream of mine to make booze [professionally](http://oaklandspirits.com/). We've had some success with our spirits, and in particular, seeing the reception of our Sea Gin and Tradewinds brandy by bartenders has been extremely rewarding.

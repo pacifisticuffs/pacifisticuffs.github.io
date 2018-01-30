@@ -1,7 +1,7 @@
 ---
-layout: post
 title: "Step 3: Profit"
 date: 2018-01-09
+categories: [setup, jekyll]
 ---
 
 I managed to install Jekyll without a problem. Following their [docs](https://jekyllrb.com/docs/home/) made it a piece of cake to get going. The functionality and ability to customize your setup is really impressive and goes far beyond anything I will likely do with it. 

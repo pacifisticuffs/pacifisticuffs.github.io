@@ -1,2 +1,9 @@
-name: Tim
-permalink: /blog/:year/:month/:day/:title
+name: Timothy Lynn
+permalink: /posts/:year/:month/:day/:title
+defaults:    
+  -
+    scope:
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Tim"
