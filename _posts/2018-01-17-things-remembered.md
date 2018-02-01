@@ -65,7 +65,7 @@ It's been a long time since I've had to worry about clearing floats, and I'd for
       clear: both; 
     }
 {% endhighlight %}
-Using Sass at LinkedIn, we used to just have to do `@include clearfix;` and like magic, things just worked. Of course, some mixins can lead to a lot of bloat in your CSS, as well developers like me getting rusty and too reliant on tooling.
+Using Sass at LinkedIn, we used to just have to do `@include clearfix;` and like magic, things just worked. Of course, some mixins can lead to a lot of bloat in your CSS, in addition to developers like me getting rusty and too reliant on tooling.
 
 - - -
 
@@ -92,7 +92,7 @@ A demonstration:
 I'm quite familiar with fieldsets, but the ability to put the `disabled` attribute on it and have that apply to the `<fieldset>`'s children is pretty cool! I imagine there are pages of JS out there does just this functionality.
 
 ##### `<input type="search" />`
-Searching has become required functionality on most sites, so this provides cross-domain autocomplete for previously-entered phrase, as well as has the little "x" icon to clear the box instantly. More stuff that used to require JS but is now being done better by the browser. HTML5 introduced a few new and very useful input types, and it's awesome that UAs have started using this functionality.
+Searching has become required functionality on most sites, so this provides cross-domain autocomplete for previously-entered phrases, also sporting the little "x" icon to clear the box instantly. More stuff that used to require JS but is now being done better by the browser. HTML5 introduced a few new and very useful input types, and it's awesome that UAs have started using this functionality.
 
 ##### The [Page Visibility](https://www.w3.org/TR/page-visibility/) API
 One of the features I appreciate about new browsers in this age of auto-playing nonsense is that they often won't begin unless the document is visible. It'd be super cool to see this functionality extended to the viewport, so that you can easily add this same auto-play/stop functionality without looking at the dimensions of an element with respect to the viewport.
