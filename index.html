@@ -14,14 +14,18 @@ title: TIMMEH!
 </article> -->
 
 {% for post in site.posts %}
-<div class="blog-post">
+<article class="blog-post">
 	<header>
 		<h2 class="blog-post-title"><a href="{{ post.url }}" class="text-dark">{{ post.title }}</a></h2>
-		<p class="blog-post-meta">{{ post.date | date: "%A %B %e, %Y" }} by <em>{{ post.author }}</em></p>
+		<p class="blog-post-meta">{{ post.date | date: "%A %B %e, %Y" }} by {{ post.author }}</p>
 	</header>
 	<div class="entry-content">
 		{{ post.content }}
 		{% comment %} <p><a class="btn btn-secondary" href="{{ post.url }}" role="button">Continue reading &raquo;</a></p>{% endcomment %} 
 	</div>
-</div><!-- /.blog-post -->
+	<footer class="blog-post-meta">
+		<p>Posted under: {{ post.categories | join: ", "}}</p>
+	</footer>	
+	<hr />
+</article><!-- /.blog-post -->
 {% endfor %}
