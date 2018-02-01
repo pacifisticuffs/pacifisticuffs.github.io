@@ -38,7 +38,7 @@ These are elements that may have their own outlines, but they don't affect the o
 - - -
 
 #### Other Neat Things
-The `<picture>` element is a cool one, giving an author a very extensive and explicit means to provide image sources for different viewing contexts, or provide different image content-types to browsers that support them (like WebP or JPEG-XR). There are also the `srcset` and `sizes` attributes now available on the `<img>` element which provide the browser everything it needs to intelligently pick an image based on viewport or pixel density. Yoav Weiss' [article](https://dev.opera.com/articles/native-responsive-images/) was quite helpful in helping me decipher the main differences between the features.
+The `<picture>` element is a cool one, giving an author a very extensive and explicit means to provide image sources for different viewing contexts, or provide different image content-types to browsers that support them (like WebP or JPEG-XR). There are also the `srcset` and `sizes` attributes now available on the `<img>` element which provide the browser everything it needs to intelligently pick an image based on viewport or pixel density. Yoav Weiss' [article](https://dev.opera.com/articles/native-responsive-images/){:target="_blank"} was quite helpful in helping me decipher the main differences between the features.
 
 
 ##### The `<progress>` and `<meter>` Tags
@@ -94,7 +94,7 @@ I'm quite familiar with fieldsets, but the ability to put the `disabled` attribu
 ##### `<input type="search" />`
 Searching has become required functionality on most sites, so this provides cross-domain autocomplete for previously-entered phrases, also sporting the little "x" icon to clear the box instantly. More stuff that used to require JS but is now being done better by the browser. HTML5 introduced a few new and very useful input types, and it's awesome that UAs have started using this functionality.
 
-##### The [Page Visibility](https://www.w3.org/TR/page-visibility/) API
+##### The [Page Visibility](https://www.w3.org/TR/page-visibility/){:target="_blank"} API
 One of the features I appreciate about new browsers in this age of auto-playing nonsense is that they often won't begin unless the document is visible. It'd be super cool to see this functionality extended to the viewport, so that you can easily add this same auto-play/stop functionality without looking at the dimensions of an element with respect to the viewport.
 
 #### In Summation
