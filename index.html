@@ -2,21 +2,11 @@
 layout: duh2
 title: TIMMEH!
 ---
-<!-- 
-<article class="col-md-4">
-	<header class="entry-header">
-		
-	</header>
-	<div class="entry-content">
-		{{ post.excerpt }}
-		<p><a class="btn btn-secondary" href="{{ post.url }}" role="button">Continue reading &raquo;</a></p>
-</div>
-</article> -->
-
 {% for post in site.posts %}
-<article class="blog-post">
+<article class="blog-post border-bottom">
 	<header>
-		<h2 class="blog-post-title"><a href="{{ post.url }}" class="text-dark">{{ post.title }}</a></h2>
+			{% comment %} <h3 class="blog-post-title"><a href="{{ post.url }}" class="text-dark">{{ post.title }}</a></h3>{% endcomment %}
+			<h3 class="blog-post-title">{{ post.title }}</h3>
 		<p class="blog-post-meta">{{ post.date | date: "%A %B %e, %Y" }} by {{ post.author }}</p>
 	</header>
 	<div class="entry-content">
@@ -25,7 +15,6 @@ title: TIMMEH!
 	</div>
 	<footer class="blog-post-meta">
 		<p>Posted under: {{ post.categories | join: ", "}}</p>
-	</footer>	
-	<hr />
+	</footer>
 </article><!-- /.blog-post -->
 {% endfor %}
