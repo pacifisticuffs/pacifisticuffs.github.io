@@ -124,6 +124,23 @@ h1, h2, h3, h4, h5, h6 {
   color: #999;
 }
 
+blockquote {
+  background: #f5f5f5;
+  border-left: .7rem solid #ccc;
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+blockquote:before {
+  color: #808080;
+  content: "\201C";
+  font-size: 4rem;
+  line-height: 0;
+  vertical-align: -.41em;
+  padding: 0 .1em 0 .1em;
+}
+
 /*
 * Footer
 */
