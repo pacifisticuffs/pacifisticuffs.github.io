@@ -124,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #999;
 }
 
-blockquote {
+.blockquote {
   background: #f5f5f5;
   border-left: .7rem solid #ccc;
   margin: 1rem;
