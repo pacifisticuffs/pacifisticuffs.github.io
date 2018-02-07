@@ -4,7 +4,7 @@ date: 2018-02-01
 categories: [HTML]
 ---
 
-Welcome to part 2 in my series of inarticulate ramblings where I'm working through a worthy collection of potential interview questions. In [part 1]({% post_url 2018-02-01-frontend-questions-1 %}){:target="_blank"} I worked through some general questions about security, accessibility and development style. Today's questions will be more targeted to HTML.
+Welcome to part 2 in my series of inarticulate ramblings where I'm working through a worthy collection of potential interview questions. In [part 1]({% post_url 2018-02-01-frontend-questions-1 %}) I worked through some general questions about security, accessibility and development style. Today's questions will be more targeted to HTML.
 
 <dl>
   <dt><h6><b>Q.</b> What does a <code>doctype</code> do?</h6></dt>
