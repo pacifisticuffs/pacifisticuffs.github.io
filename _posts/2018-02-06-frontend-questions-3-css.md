@@ -29,7 +29,7 @@ In this post I'm going to work through some of the CSS questions posed in the [F
   <dt><h6><b>Q.</b> Describe floats and how they work.</h6></dt>
   <dd>
   <p>After the world figured out that tables were intended for data, we needed another way to achieve columnar layouts. Floats did this pretty well, but came with some headaches. To its parent, a floated element pretty much doesn't exist. That is, its dimensions are ignored and unless the parent has a block formatting context, it will collapse. Floats were great at some things. For instance, throwing out a list of thumbnails all floated left will stack them in line, and once the width of its parent is reached, they'll intelligently wrap themselves. <code>clear</code>ing floats is where a lot of developers would encounter trouble. You could add a non-semantic block-level element after your floats and have it <code>clear: both;</code>, but this screwed up all our beautiful semantic, non-presentational markup. It wasn't until this beauty was widely distributed that working with floats became easy and common:</p>
-{% highlight css %}  
+{% highlight css linenos %}
 .clearfix::after {
   content: "";
   display: table;
@@ -65,14 +65,14 @@ In this post I'm going to work through some of the CSS questions posed in the [F
   <dd>
   <p>A common thing we used to do before webfonts were around was to use image replacement on (typically) headers. You can still provide the text on the page with its appropriate semantics, and use <code>text-indent: -9999px;</code> to throw the content outside the viewport. Then you'd set a <code>background-image</code> in your CSS to provide the pretty fonts. The plaintext will still be accessible to screen readers.</p>
   <p>Another way, if the content is intended just for screen readers, is to position it off screen:</p>
-{% highlight css %}
+{% highlight css linenos %}
 .help-text {
   position: absolute;
   left: -9999px;
 }
 {% endhighlight %}
   <p>Or by turning it into an almost non-existent box:</p>
-{% highlight css %}
+{% highlight css linenos %}
 .help-text {
   clip: rect( 0 0 0 0);
   height: 1px;
@@ -104,7 +104,7 @@ In this post I'm going to work through some of the CSS questions posed in the [F
   <dt><h6><b>Q.</b> Explain how a browser determines what elements match a CSS selector.</h6></dt>
   <dd>
   <p>A browser will work from right-to-left when matching a CSS selector. That is, given the rule:</p>
-{% highlight css %}
+{% highlight css linenos %}
 .main section .time {
   background-color: #ccc;  
 }
@@ -138,7 +138,7 @@ In this post I'm going to work through some of the CSS questions posed in the [F
   <dd>
   <p>Believe it or not, box sizing was one thing that good ol' IE6 got right. It adhered to what is now called <code>border-box</code> sizing. That is, if you stated an element's width as 200px, then the <em>overall</em> width of that element was 200px, <em>including</em> borders and padding. Competing browsers at the time (and the default box-sizing method for CSS today) used the <code>content-box</code> method, which stated that padding and border were added to the declared width of an element. Enter in all the backslash hacks to get IE to play nice with your floated layouts. Ugh.</p>
   <p>Fortunately, sanity took hold, and we agreed upon the universal reset that works great:</p>
-{% highlight css %}
+{% highlight css linenos %}
 * { box-sizing: border-box; }
 {% endhighlight %}
   <p>This wonderful rule tells every element to include in its width calculation an element's border and padding, giving developer's a predictable and level playing field.</p>

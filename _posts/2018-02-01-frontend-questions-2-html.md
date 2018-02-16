@@ -11,13 +11,13 @@ Welcome to part 2 in my series of inarticulate ramblings where I'm working throu
   <dd>
     <p>
     The doctype is the very first tag a browser encounters when rendering a page. It tells the browser what version of HTML follows (which <abbr title="Document Type Definition">DTD</abbr> the page adheres to, if any). Since the introduction of HTML5, doctype's value has gotten ridiculously simple:
-{% highlight html %}
+{% highlight html linenos %}
 <!doctype html>
 {% endhighlight %}
     </p>
     <p>IE used to have a fun bug where if you had any content prior to the doctype (white space, comments), it would render the page in quirks mode, often screwing up your page layout in fun and exciting ways.</p>
     <p>Since previous HTML standards relied upon a DTD to define the grammar allowed, there were several doctype variants available to us, depending on what sort of page was being authored, and to what level of standards we wanted to adhere to:
-{% highlight html %}
+{% highlight html linenos %}
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
 "http://www.w3.org/TR/html4/strict.dtd">
 
@@ -44,10 +44,10 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
   <dd>
     <p>It's like the crust in stuffed-crust pizza, you can put anything you want in there.</p>
     <p>The main uses I've had in the past are through JS, where, if you're a rational person and not worried about IE&lt;11, you can use the really sweet <code>dataset</code> property:</p>
-{% highlight html %}
+{% highlight html linenos %}
 <div id="example" data-value="3" data-is-dirty="false"></div>
 {% endhighlight %}
-{% highlight js %}
+{% highlight js linenos %}
 var el = document.getElementById( 'example' );
 if ( el.dataset.isDirty == 'true' ) {
   el.dataset.value++;
@@ -57,7 +57,7 @@ if ( el.dataset.isDirty == 'true' ) {
 
     <p>The downside is that things like boolean evaluations need to be done as literals, because the values of <code>data-</code> attributes are treated as strings.</p>
     <p>Data attributes can also be used as styling hooks, using the attribute selectors.</p>
-{% highlight css %}    
+{% highlight css linenos %}
 div[data-is-dirty='true'] {
   color: #f00;
 }
@@ -69,7 +69,7 @@ div[data-is-dirty='false'] {
   <dt><h6><b>Q.</b> Describe the difference between a cookie, sessionStorage and localStorage.</h6></dt>
   <dd>
     <p>Starting with <code>sessionStorage</code> and <code>localStorage</code> is easiest, because they are very similar, differing in that <code>localStorage</code> persists even after the tab or window is closed. The interface is super simple, setting or getting key:value pairs through the desired property:</p>
-{% highlight js %}
+{% highlight js linenos %}
 localStorage.setItem( 'name', 'Tim' );
 sessionStorage.setItem( 'name', 'Tim' );
 alert( localStorage.getItem( 'name' ) + ' ' 
