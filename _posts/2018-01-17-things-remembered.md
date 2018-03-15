@@ -8,7 +8,7 @@ As I read through the docs for Jekyll and Bootstrap, I'm naturally going off on 
 
 - - -
 
-#### HTML Sectioning Elements
+##### HTML Sectioning Elements
 HTML5 introduced some improved semantic elements that allow an author to explicitly define page structures, as well as some elements that define their own discrete outlines that don't necessarily contribute to the outline of the entire document. Whereas in HTML4 we relied on the cascade of header elements to define a page's structure implicitly, we can now explicitly construct it.
 
 From a visual perspective, these enhancements don't make a lot of difference, but from a semantics POV, the explicit definition of sections and hierarchy should allow tool makers (search engines, assistive technology, scrapers) to better parse and understand what authors are writing. 
@@ -37,11 +37,11 @@ These are elements that may have their own outlines, but they don't affect the o
 
 - - -
 
-#### Other Neat Things
+##### Other Neat Things
 The `<picture>` element is a cool one, giving an author a very extensive and explicit means to provide image sources for different viewing contexts, or provide different image content-types to browsers that support them (like WebP or JPEG-XR). There are also the `srcset` and `sizes` attributes now available on the `<img>` element which provide the browser everything it needs to intelligently pick an image based on viewport or pixel density. Yoav Weiss' [article](https://dev.opera.com/articles/native-responsive-images/){:target="_blank"} was quite helpful in helping me decipher the main differences between the features.
 
 
-##### The `<progress>` and `<meter>` Tags
+###### The `<progress>` and `<meter>` Tags
 I know this isn't groundbreaking or anything, but it was interesting to see these have browser support behind them now. Both of these elements were always previously mimicked/hacked using scaled images or maybe table cells or nested elements, with their width adjusted via CSS.
 
 <p><span style="width:70%" data-value="66">You are about&nbsp;</span>
@@ -56,7 +56,7 @@ done reading my stupid post.</p>
 
 - - -
 
-#### A Very Good Friend
+##### A Very Good Friend
 It's been a long time since I've had to worry about clearing floats, and I'd forgotten what a headache it could be. Then I stumbled upon the following CSS, and remembered what a revelation it was:
 {% highlight css %}
     .clear:after { 
@@ -69,13 +69,13 @@ Using Sass at LinkedIn, we used to just have to do `@include clearfix;` and like
 
 - - -
 
-#### Some Other Fun Stuff
+##### Some Other Fun Stuff
 Just a few other things I found interesting.
 
-##### `<mark>`
+###### `<mark>`
 There's a tag just for marking highlights! I'm a sucker for semantics, so I'm always excited to see new tags in response to new use cases. `<mark>` just <mark>highlights text</mark>, particularly useful if you're, say, working on an app for annotating educational material.
 
-##### `<details>` &amp; `<summary>`
+###### `<details>` &amp; `<summary>`
 This is one of the few tags I can think of that produce a native widget in the browser. This show/hide functionality has forever been the job of JS, but it's really cool that it's been turned into native functionality. What's unfortunate though, is that with a native implementation comes native designs, making it difficult to add the interface and design your designers will desire (see also `<meter>`, `<progress>`, `<modal>`).
 A demonstration:
 <details>
@@ -88,16 +88,16 @@ A demonstration:
 </details>
 <p></p>
 
-##### `<fieldset disabled>`
+###### `<fieldset disabled>`
 I'm quite familiar with fieldsets, but the ability to put the `disabled` attribute on it and have that apply to the `<fieldset>`'s children is pretty cool! I imagine there are pages of JS out there does just this functionality.
 
-##### `<input type="search" />`
+###### `<input type="search" />`
 Searching has become required functionality on most sites, so this provides cross-domain autocomplete for previously-entered phrases, also sporting the little "x" icon to clear the box instantly. More stuff that used to require JS but is now being done better by the browser. HTML5 introduced a few new and very useful input types, and it's awesome that UAs have started using this functionality.
 
-##### The [Page Visibility](https://www.w3.org/TR/page-visibility/){:target="_blank"} API
+###### The [Page Visibility](https://www.w3.org/TR/page-visibility/){:target="_blank"} API
 One of the features I appreciate about new browsers in this age of auto-playing nonsense is that they often won't begin unless the document is visible. It'd be super cool to see this functionality extended to the viewport, so that you can easily add this same auto-play/stop functionality without looking at the dimensions of an element with respect to the viewport.
 
-#### In Summation
+##### In Summation
 Fun stuff. This took me days to write, because each link I followed led to another and another, screwing around with a code block somewhere and then trying something out here. It's great thinking about these things again!
 
 <style>

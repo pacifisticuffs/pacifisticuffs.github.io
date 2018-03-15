@@ -9,7 +9,7 @@ Previously: [part 2 - html]({% post_url 2018-02-01-frontend-questions-2-html %})
 In this post I'm going to work through some of the JS questions posed in the [Front-end Interview Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions){:target="_blank"} repo.
 
 <dl>
-  <dt><h6><b>Q.</b> Explain event delegation. Describe event bubbling.</h6></dt>
+  <dt><h5><b>Q.</b> Explain event delegation. Describe event bubbling.</h5></dt>
   <dd>
     <h6>Bubbling</h6>
     <p>Javascript events occur on the element with which a user interacts, and then they progress up that element's ancestors until the <code>document</code> is reached. This bubbling action is what makes event delegation possible. Bubbling is the default behavior for events, however you can stop an event from moving up its ancestors by using <code>event.stopPropagation()</code>.</p>
@@ -161,7 +161,7 @@ el.addEventListener( 'click', handler );
   })();
 </script>
   </dd>
-  <dt><h6><b>Q.</b> Explain how <code>this</code> works in JavaScript</h6></dt>
+  <dt><h5><b>Q.</b> Explain how <code>this</code> works in JavaScript</h5></dt>
   <dd>
     <p>The value of <code>this</code> depends on the context in which it's referenced. In a global context, outside of a function or another object, it refers to the <code>window</code> object.</p>
     <p>Inside of a function when no <code>bind</code>, <code>call</code>, or <code>apply</code> has been used to invoke the function, <code>this</code> will also refer to the <code>window</code> object, unless you're operating in strict mode, in which case it will return <code>undefined</code>.</p>
@@ -219,7 +219,7 @@ You should click somewhere in here.</p>
 </script>  
   </dd>
 {% comment %}  
-  <dt><h6><b>Q.</b> Explain how prototypal inheritance works</h6></dt>
+  <dt><h5><b>Q.</b> Explain how prototypal inheritance works</h5></dt>
   <dd>
     <p>There are a couple ways for objects to inherit a prototype. The older way which I was more familiar with was using <code>new</code> with a constructor function:</p>
 {% highlight js linenos %}
@@ -258,14 +258,14 @@ instance.area(); // 25
 {% endhighlight %}
   </dd>
 {% endcomment %}
-  <dt><h6><b>Q.</b> What do you think of AMD vs CommonJS?</h6></dt>
+  <dt><h5><b>Q.</b> What do you think of AMD vs CommonJS?</h5></dt>
   <dd>
     <p>I'm likely going to show my age, and confess that I feel about them the same way I do transpilers, the labyrinth of build systems required to do pretty much anything anymore, and the plethora of redundant libraries that are now available. That is, I find them unnecessarily complex, overly niche, and typically overkill when seen from the perspective of my previous development experience. Despite that, my obstinateness can take a backseat because I understand that there are valid applications of this technology.</p>
     <p>I have very little practical experience with either technology, so explanations here are all derived from my research. CommonJS was originally intended for applications outside the browser, one notable implementation was in <a href="https://nodejs.org/docs/latest/api/modules.html" target="_blank">NodeJS</a>. <a href="https://github.com/amdjs/amdjs-api/blob/master/AMD.md" target="_blank"><abbr title="Asynchronous Module Definition">AMD</abbr></a> was written to target the async capabilities of the browser, allowing an author to define dependencies, and providing a fairly simple and common API (to the developer) to create modules that operate on fairly discrete pieces of app functionality.</p>
     <p>I think my criticism of these technologies lies in that it requires yet another layer of, not really abstraction, but domain knowledge in order to get them to work. Previously, we just had to make sure that in our concatenated site-wide JS, things were loaded in order: base libraries first that are used across the entire organization, and then app-specific code. Your app code could be written in a common pattern that didn't require additional knowledge of your loader.</p>
     <p>And despite that, I see the benefits of using a loader. You have async loading, explicit definitions of dependencies, and a fairly obvious idea at a glance of what your code is doing since it's supposed to be small and have a targeted purpose. This is definitely an area where I need to play with the technology to get a greater familiarity with it.</p>
   </dd>
-  <dt><h6><b>Q.</b> Explain why the following doesn't work as an <abbr title="Immediately-Invoked Function Expression">IIFE</abbr>: <code>function foo(){ }();</code> What needs to be changed to properly make it an IIFE?</h6></dt>
+  <dt><h5><b>Q.</b> Explain why the following doesn't work as an <abbr title="Immediately-Invoked Function Expression">IIFE</abbr>: <code>function foo(){ }();</code> What needs to be changed to properly make it an IIFE?</h5></dt>
   <dd>
     <p>The reason it doesn't work is that it's syntactically incorrect. When cleaned up a little, it looks like:</p>
 {% highlight js linenos %}
@@ -283,7 +283,7 @@ function foo() {
 {% endhighlight %}
     <p>Note the order of the parens in the corrected version, <code>(function foo() {})();</code>. This can also be written as <code>(function foo() {}());</code>. While this difference isn't typically an issue, it can be when you have IIFEs in minified code that rely upon parameters being passed in. If you're missing a semicolon, then the value of <code>undefined</code> can be passed in as a parameter, leading to run-time errors or unintended values being passed in. The short answer to this discussion though is just use your damn semicolons (and curlies, and parens, and anything else that removes ambiguity from your code).</p>
   </dd>
-  <dt><h6><b>Q.</b> What's the difference between a variable that is: <code>null</code>, <code>undefined</code> or undeclared? How do you go about checking for these states?</h6></dt>
+  <dt><h5><b>Q.</b> What's the difference between a variable that is: <code>null</code>, <code>undefined</code> or undeclared? How do you go about checking for these states?</h5></dt>
   <dd>
     <h6>Let's start with undeclared</h6>
     <p>JS doesn't have an undeclared type. That is, if you're attempting to access a variable that hasn't been declared, you'll get a reference error:</p>
@@ -322,7 +322,7 @@ duh === null;      // true
     <p>So the best bet when dealing with <code>null</code> is to explicitly check for it using <code>===</code>, so no type coercion takes place.</p>
     <p>As for <code>undefined</code> and undeclared variables, it's easiest to stick with using <code>typeof</code>. In the event a variable has not been declared, it will not throw an error, allowing you to continue your app's execution.</p>
   </dd>
-  <dt><h6><b>Q.</b> What is a closure, and how/why would you use one?</h6></dt>
+  <dt><h5><b>Q.</b> What is a closure, and how/why would you use one?</h5></dt>
   <dd>
     <p>Closures are often used to create a public/private interface for objects. Let's use the oft-cited example of counting the number of times a button was clicked.</p>
 {% highlight html linenos %}
@@ -433,7 +433,7 @@ reset.addEventListener( 'click', update.reset );
 </script>
 </div>
   </dd>
-  <dt><h6><b>Q.</b> Can you describe the main difference between a <code>.forEach()</code> loop and a <code>.map()</code> loop and why you would pick one versus the other?</h6></dt>
+  <dt><h5><b>Q.</b> Can you describe the main difference between a <code>.forEach()</code> loop and a <code>.map()</code> loop and why you would pick one versus the other?</h5></dt>
   <dd>
     <p>Similar to a <code>for</code> loop, <code>.forEach()</code> is used to iterate over items in an array and execute a function of the value provided. After the execution of <code>.forEach()</code>, <code>undefined</code> is always returned, even if the original array is mutated.</p>
 {% highlight js linenos %}
@@ -452,7 +452,7 @@ console.log( squares ); // [0, 1, 4, 9]
 {% endhighlight %}
     <p>As for which to use and when, use <code>.map()</code> when you want a new array of values derived from values in a source array, and use <code>.forEach()</code> when you don't care what's returned from the callback, or use it if you prefer its syntax to a <code>for</code> loop's.</p>
   </dd>
-  <dt><h6><b>Q.</b> What's a typical use case for anonymous functions?</h6></dt>
+  <dt><h5><b>Q.</b> What's a typical use case for anonymous functions?</h5></dt>
   <dd>
     <p>Callbacks are probably the most-common use I've had for them in the past:</p>
 {% highlight js linenos %}
@@ -472,11 +472,11 @@ var squares = arr.map( square );
 {% endhighlight %}
     <p>In this case, moving <code>square()</code> to a named function would be somewhat useful, since it's a pretty generic piece of functionality and could be applied to areas outside that callback. But typically, callbacks are specific to that instance and don't really need a named or referenced function. I find anonymous functions also aid in readability, as you don't have to track down a function definition elsewhere in the code.</p>
   </dd>
-  <dt><h6><b>Q.</b> How do you organize your code? (module pattern, classical inheritance?)</h6></dt>
+  <dt><h5><b>Q.</b> How do you organize your code? (module pattern, classical inheritance?)</h5></dt>
   <dd>
     <p>I'm a big fan of the module pattern for its simplicity in understanding and implementation. I've previously used classical when at LinkedIn, but I much prefer working with modules. A pretty fantastic primer on modules is available from <a href="http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html" target="_blank">Ben Cherry</a>, which despite being almost 8 years old, is still immensely useful.</p>
   </dd>
-  <dt><h6><b>Q.</b> What's the difference between host objects and native objects?</h6></dt>
+  <dt><h5><b>Q.</b> What's the difference between host objects and native objects?</h5></dt>
   <dd>
     <p><em>Native objects</em> are those defined by the ECMAScript engine: Object, Array, String, Function, etc. They exist regardless of where a program is running (e.g., server or browser).</p>
     <p><em>Host objects</em> are reliant upon the environment in which a program is running. In the browser, we have <code>window</code>, <code>document</code>, <code>history</code>. In an environment like NodeJS, we might have <code>fs</code> to access the local filesystem, but no concept of <code>window</code>.</p>
