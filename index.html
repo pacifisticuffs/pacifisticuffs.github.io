@@ -5,13 +5,13 @@ title: TIMMEH!
 {% for post in site.posts %}
 <article class="blog-post border-bottom">
 	<header>
-			{% comment %} <h3 class="blog-post-title"><a href="{{ post.url }}" class="text-dark">{{ post.title }}</a></h3>{% endcomment %}
-			<h3 class="blog-post-title">{{ post.title }}</h3>
+			<h3 class="blog-post-title"><a href="{{ post.url }}" class="text-dark">{{ post.title }}</a></h3>
+			{% comment %} <h3 class="blog-post-title">{{ post.title }}</h3>{% endcomment %}
 		<p class="blog-post-meta">{{ post.date | date: "%A %B %e, %Y" }} by {{ post.author }}</p>
 	</header>
 	<div class="entry-content">
-		{{ post.content }}
-		{% comment %} <p><a class="btn btn-secondary" href="{{ post.url }}" role="button">Continue reading &raquo;</a></p>{% endcomment %} 
+		{{ post.excerpt }}
+		<p><a class="btn btn-secondary" href="{{ post.url }}" role="button">Continue reading &raquo;</a></p>
 	</div>
 	<footer class="blog-post-meta">
 		<p>Posted under: {{ post.categories | join: ", "}}</p>

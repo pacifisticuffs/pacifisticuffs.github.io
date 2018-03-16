@@ -11,7 +11,7 @@ As I read through the docs for Jekyll and Bootstrap, I'm naturally going off on 
 ##### HTML Sectioning Elements
 HTML5 introduced some improved semantic elements that allow an author to explicitly define page structures, as well as some elements that define their own discrete outlines that don't necessarily contribute to the outline of the entire document. Whereas in HTML4 we relied on the cascade of header elements to define a page's structure implicitly, we can now explicitly construct it.
 
-From a visual perspective, these enhancements don't make a lot of difference, but from a semantics POV, the explicit definition of sections and hierarchy should allow tool makers (search engines, assistive technology, scrapers) to better parse and understand what authors are writing. 
+From a visual perspective, these enhancements don't make a lot of difference, but from a semantics POV, the explicit definition of sections and hierarchy should allow tool makers (search engines, assistive technology, scrapers) to better parse and understand what authors are writing.
 
 
 ##### Explicit Sections
@@ -59,10 +59,10 @@ done reading my stupid post.</p>
 ##### A Very Good Friend
 It's been a long time since I've had to worry about clearing floats, and I'd forgotten what a headache it could be. Then I stumbled upon the following CSS, and remembered what a revelation it was:
 {% highlight css %}
-    .clear:after { 
-      content: ''; 
-      display: block; 
-      clear: both; 
+    .clear:after {
+      content: '';
+      display: block;
+      clear: both;
     }
 {% endhighlight %}
 Using Sass at LinkedIn, we used to just have to do `@include clearfix;` and like magic, things just worked. Of course, some mixins can lead to a lot of bloat in your CSS, in addition to developers like me getting rusty and too reliant on tooling.
@@ -104,15 +104,15 @@ Fun stuff. This took me days to write, because each link I followed led to anoth
     meter { width: 100%; }
     progress[value] {
         appearance: none;
-        border: none;	
-        width: 100%; 
-        height: 20px;	
+        border: none;
+        width: 100%;
+        height: 20px;
         background-color: whiteSmoke;
         border-radius: 3px;
         box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
-        color: royalblue;	
+        color: royalblue;
         position: relative;
-        margin: 0; 
+        margin: 0;
     }
 
     progress[value]::-webkit-progress-bar {
@@ -122,34 +122,34 @@ Fun stuff. This took me days to write, because each link I followed led to anoth
     }
 
     progress[value]::-webkit-progress-value {
-        position: relative;	
+        position: relative;
         background-size: 35px 20px, 100% 100%, 100% 100%;
         border-radius: 3px;
     }
 
     progress[value]::-webkit-progress-value:after {
         content: '';
-        position: absolute;	
-        width: 5px; 
+        position: absolute;
+        width: 5px;
         height: 5px;
-        top: 7px; 
-        right: 7px;	
+        top: 7px;
+        right: 7px;
         background-color: white;
         border-radius: 100%;
     }
 
 
     progress[value]::-moz-progress-bar {
-        background-image: 
-            -moz-linear-gradient( 135deg, transparent, transparent 33%, rgba(0,0,0,.1) 33%, rgba(0,0,0,.1) 66%, transparent 66%), 
-            -moz-linear-gradient( top, rgba(255, 255, 255, .25), rgba(0,0,0,.2)), 
-            -moz-linear-gradient( left, #09c, #f44);	
+        background-image:
+            -moz-linear-gradient( 135deg, transparent, transparent 33%, rgba(0,0,0,.1) 33%, rgba(0,0,0,.1) 66%, transparent 66%),
+            -moz-linear-gradient( top, rgba(255, 255, 255, .25), rgba(0,0,0,.2)),
+            -moz-linear-gradient( left, #09c, #f44);
         background-size: 35px 20px, 100% 100%, 100% 100%;
-        border-radius: 3px;	
+        border-radius: 3px;
     }
 
-    span[data-value] {   
-    position: relative; 
+    span[data-value] {
+    position: relative;
     }
 
     span[data-value]:after {
@@ -158,15 +158,15 @@ Fun stuff. This took me days to write, because each link I followed led to anoth
     }
 
     progress::-webkit-progress-value {
-        background-image: 
-            -webkit-linear-gradient( 135deg, transparent, transparent 33%, rgba(0,0,0,.1) 33%, rgba(0,0,0,.1) 66%, transparent 66%), 
-            -webkit-linear-gradient( top, rgba(255, 255, 255, .25), rgba(0,0,0,.2)), 
+        background-image:
+            -webkit-linear-gradient( 135deg, transparent, transparent 33%, rgba(0,0,0,.1) 33%, rgba(0,0,0,.1) 66%, transparent 66%),
+            -webkit-linear-gradient( top, rgba(255, 255, 255, .25), rgba(0,0,0,.2)),
             -webkit-linear-gradient( left, #09c, #f44);
     }
     progress::-moz-progress-bar {
-        background-image: 
-            -moz-linear-gradient( 135deg, transparent, transparent 33%, rgba(0,0,0,.1) 33%, rgba(0,0,0,.1) 66%, transparent 66%), 
-            -moz-linear-gradient( top, gba(255, 255, 255, .25), rgba(0,0,0,.2)), 
+        background-image:
+            -moz-linear-gradient( 135deg, transparent, transparent 33%, rgba(0,0,0,.1) 33%, rgba(0,0,0,.1) 66%, transparent 66%),
+            -moz-linear-gradient( top, gba(255, 255, 255, .25), rgba(0,0,0,.2)),
             -moz-linear-gradient( left, #09c, #f44);
     }
 </style>

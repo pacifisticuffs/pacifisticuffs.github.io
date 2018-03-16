@@ -18,13 +18,13 @@ Welcome to part 2 in my series of inarticulate ramblings where I'm working throu
     <p>IE used to have a fun bug where if you had any content prior to the doctype (white space, comments), it would render the page in quirks mode, often screwing up your page layout in fun and exciting ways.</p>
     <p>Since previous HTML standards relied upon a DTD to define the grammar allowed, there were several doctype variants available to us, depending on what sort of page was being authored, and to what level of standards we wanted to adhere to:
 {% highlight html linenos %}
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
 "http://www.w3.org/TR/html4/strict.dtd">
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01
 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -72,9 +72,9 @@ div[data-is-dirty='false'] {
 {% highlight js linenos %}
 localStorage.setItem( 'name', 'Tim' );
 sessionStorage.setItem( 'name', 'Tim' );
-alert( localStorage.getItem( 'name' ) + ' ' 
+alert( localStorage.getItem( 'name' ) + ' '
        + sessionStorage.getItem( 'name' ) );
-{% endhighlight %} 
+{% endhighlight %}
     <p>Cookies are also key:value pairs, comprised of text strings and with an overall size limit of 4K per cookie. Cookies are sent with every request to the server, and are often used for authentication purposes. The implementor can set expiry times on cookies, so they may expire during an inactive user session (e.g., your banking site).</p>
   </dd>
   <dt><h5><b>Q.</b> Describe the difference between &lt;script&gt;, &lt;script async&gt; and &lt;script defer&gt;.</h5></dt>
@@ -85,7 +85,7 @@ alert( localStorage.getItem( 'name' ) + ' '
     With the <code>async</code> attribute, the script is fetched during HTML parsing, and then executed as soon as it's available. The execution will pause the document parser if it's still running, and scripts downloaded asynchronously could be executed out of order. This is the recommended attribute to use for non-essential scripts, like analytics and advertising.
   </dd>
   <dd>
-    <code>defer</code> will download as the document is being parsed and will be executed in order after the document has been parsed, but prior to <code>DOMContentLoaded</code>.    
+    <code>defer</code> will download as the document is being parsed and will be executed in order after the document has been parsed, but prior to <code>DOMContentLoaded</code>.
   </dd>
   <dt><h5><b>Q.</b> Why is it generally a good idea to position CSS <code>&lt;link&gt;</code>s between <code>&lt;head&gt;&lt;/head&gt;</code> and JS <code>&lt;script&gt;</code>s just before <code>&lt;/body&gt;</code>? Do you know any exceptions?</h5></dt>
   <dd>
@@ -93,7 +93,7 @@ alert( localStorage.getItem( 'name' ) + ' '
     <blockquote class="blockquote">Keywords that are body-ok affect whether link elements are allowed in the body. The body-ok keyword defined by this specification is stylesheet. Other specifications can also define body-ok keywords.</blockquote>
     <p>Pragmatically speaking, stylesheets belong in the head so that their rules can be applied to the document that will be immediately parsed below it. Imagine having a document fetched and parsed, and then suddenly applying a massive CSS file to it. You'd get a nasty <abbr title="Flash of Unstyled Content">FOUC</abbr>, as well as performance issues while the page is redrawn.</p>
     <p>As for loading <code>&lt;script&gt;</code> tags just before the body, this is very similar to using a <code>defer</code> attribute. As the document is parsed top-to-bottom, putting scripts down below will allow the document to be parsed prior to any scripts downloading and executing. Since <code>defer</code> achieves a similar effect (in addition to downloading while the HTML is also downloading), you can keep scripts in the <code>&lt;head&gt;</code> of your document with that attribute.</p>
-    <p>The requirement for <code>defer</code> scripts though is that they must not contain <code>document.write();</code> as this will affect the document parsing.</p> 
+    <p>The requirement for <code>defer</code> scripts though is that they must not contain <code>document.write();</code> as this will affect the document parsing.</p>
   </dd>
   <dt><h5><b>Q.</b> Why you would use a <code>srcset</code> attribute in an <code>&lt;img&gt;</code> tag? Explain the process the browser uses when evaluating the content of this attribute.</h5></dt>
   <dd>

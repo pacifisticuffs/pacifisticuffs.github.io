@@ -2,6 +2,7 @@
 title: "Answering FEE Interview Questions - Part 4: JS the 2rd"
 date: 2018-03-15
 categories: [JS]
+excerpt: A continuation of my answers to Javascript questions posed in the increasingly-refreshed <a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions" target="_blank">Front-end Interview Questions</a> repo
 ---
 
 Previously: [part 3 - css]({% post_url 2018-02-06-frontend-questions-3-css %}) --- [part 4 - js #1]({% post_url 2018-03-06-frontend-questions-4-js %})
@@ -27,11 +28,11 @@ function drinkBeverage( type ) {
     throw 'You poke yourself in the eye with an unopened bottle';
   }
 
-  this.type = type;  
+  this.type = type;
   return this.drink();
 }
 // no given context for this, it assumes window when not in strict mode
-openBeverage(); 
+openBeverage();
 drinkBeverage( 'whiskey' ); // error! this.drink is not a function!
 {% endhighlight %}
     <p>Now let's give it some context:</p>
@@ -93,7 +94,7 @@ function drink() {
 // no need for context with this example
 drink = drink.bind( null, '1 Bourbon', '1 Scotch' );
 drink( '1 Beer' ); // '1 Bourbon, 1 Scotch, and 1 Beer'
-{% endhighlight %}     
+{% endhighlight %}
   </dd>
   <dt><h6><b>Q.</b> When would you use <code>document.write()</code>?</h6></dt>
   <dd>
@@ -105,13 +106,13 @@ drink( '1 Beer' ); // '1 Bourbon, 1 Scotch, and 1 Beer'
   <p>Feature inference looks for the availability of some particular object or function, and then infers from its availability that something else is likely available:</p>
 {% highlight js linenos %}
 if ( localStorage ) {
-  sessionStorage.setItem( 'key', 'value' );  
-}  
+  sessionStorage.setItem( 'key', 'value' );
+}
 else {
   // no sessionStorage :'(
 }
 {% endhighlight %}
-    <p>Feature detection is somewhat similar to inference in that it checks that an object or function exists before attempting to use it, but it's explicitly checking for that functionality, and not making assumptions beyond that. Feature detection is extremely useful for things like polyfills.</p> 
+    <p>Feature detection is somewhat similar to inference in that it checks that an object or function exists before attempting to use it, but it's explicitly checking for that functionality, and not making assumptions beyond that. Feature detection is extremely useful for things like polyfills.</p>
   </dd>
   <dt><h5><b>Q.</b> Explain <abbr title="Asynchronous Java and XML">Ajax</abbr> in as much detail as possible. What are the advantages and disadvantages of using Ajax?</h5></dt>
   <dd>
@@ -155,7 +156,7 @@ window.cb = function( data ) {
   fig.appendChild( img );
   fig.appendChild( txt );
 
-  // insert the new element in the dom    
+  // insert the new element in the dom
   btn.parentNode.insertBefore( fig, btn );
 };
 {% endhighlight %}
@@ -171,7 +172,7 @@ window.cb = function( data ) {
     var script = document.createElement( 'script' );
     script.setAttribute( 'id', 'json-script' );
     script.setAttribute( 'src', 'https://api.github.com/users/pacifisticuffs?callback=cb' );
-    
+
     // add the new script to the page's head
     document.getElementsByTagName( 'head' )[0].appendChild( script );
   });
@@ -191,7 +192,7 @@ window.cb = function( data ) {
     var script = document.createElement( 'script' );
     script.setAttribute( 'id', 'json-script' );
     script.setAttribute( 'src', 'https://api.github.com/users/pacifisticuffs?callback=cb' );
-    
+
     // add the new script to the page's head
     document.getElementsByTagName( 'head' )[0].appendChild( script );
   });
@@ -218,7 +219,7 @@ window.cb = function( data ) {
     fig.appendChild( img );
     fig.appendChild( txt );
 
-    // insert the new element in the dom    
+    // insert the new element in the dom
     btn.parentNode.insertBefore( fig, btn );
   };
 })();
@@ -253,7 +254,7 @@ blurt(); // logs undefined, then 'hork'
   </dd>
   <dt><h5><b>Q.</b> What's the difference between an "attribute" and a "property"?</h5></dt>
   <dd>
-    <p><b>Attributes</b> exist in your markup, and <b>properties</b> exist in your JS (they're HTMLElement object properties). The attribute values present in your markup provide the initial values for the object properties. Attributes are accessed via <code>.getAttribute()</code>. For example, <code>element.getAttribute('value')</code> or <code>element.getAttribute('class')</code>, whereas properties usually have the same or similar name, <code>element.value</code> or <code>element.className</code></p>    
+    <p><b>Attributes</b> exist in your markup, and <b>properties</b> exist in your JS (they're HTMLElement object properties). The attribute values present in your markup provide the initial values for the object properties. Attributes are accessed via <code>.getAttribute()</code>. For example, <code>element.getAttribute('value')</code> or <code>element.getAttribute('class')</code>, whereas properties usually have the same or similar name, <code>element.value</code> or <code>element.className</code></p>
   </dd>
   <dt><h5><b>Q.</b> Why is extending built-in JavaScript objects not a good idea?</h5></dt>
   <dd>

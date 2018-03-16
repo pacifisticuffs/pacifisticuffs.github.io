@@ -18,7 +18,7 @@
 
     <title>{{ page.title }}</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous" />    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Roboto" rel="stylesheet" />
     <link href="/css/main.css" rel="stylesheet" />
 
@@ -26,7 +26,7 @@
     {% comment %}
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
     {% endcomment %}
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous" defer></script>    
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous" defer></script>
 
   </head>
 
@@ -34,13 +34,13 @@
 
     <div class="container" id="top">
       <header class="blog-header py-3">
-        <div class="row flex-nowrap justify-content-between align-items-center">        
+        <div class="row flex-nowrap justify-content-between align-items-center">
           <div class="col-12 text-center">
             <a class="blog-header-logo text-dark" href="/">{{ page.title }}</a>
-          </div>          
+          </div>
         </div>
       </header>
-      {% comment %}       
+      {% comment %}
       <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
           {% assign sorted_cats = site.categories | sort %}
@@ -57,7 +57,7 @@
           <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
         </div>
       </div>
-      
+
       <div class="row mb-2">
         <div class="col-md-6">
           <div class="card flex-md-row mb-4 box-shadow h-md-250">
@@ -86,9 +86,9 @@
             </div>
             <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
           </div>
-        </div>        
+        </div>
       </div>
-      {% endcomment %} 
+      {% endcomment %}
     </div>
 
     <main role="main" class="container">
@@ -100,12 +100,12 @@
 
           {{ content }}
 
-          {% comment %} 
+          {% comment %}
           <nav class="blog-pagination">
             <a class="btn btn-outline-primary" href="#">Older</a>
             <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
           </nav>
-          {% endcomment %} 
+          {% endcomment %}
 
         </div><!-- /.blog-main -->
 
@@ -115,7 +115,7 @@
             <p class="mb-0">This is a site in which I'm trying to write about things I'm learning as I prepare to get back into tech professionally. Turns out, if you take time off from it, you get dumb.</p>
           </div>
 
-          {% comment %} 
+          {% comment %}
           <div class="p-3">
             <h4 class="font-italic">Archives</h4>
             <ol class="list-unstyled mb-0">
@@ -142,7 +142,7 @@
               <li><a href="#">Facebook</a></li>
             </ol>
           </div>
-          {% endcomment %} 
+          {% endcomment %}
         </aside><!-- /.blog-sidebar -->
 
       </div><!-- /.row -->
@@ -152,6 +152,6 @@
     <footer class="blog-footer">
       <p><small>I didn't build this template, but hopefully modified it nicely. Originally done by <a href="https://twitter.com/mdo">@mdo</a>.</small></p>
       <p><a href="#top">Back to top</a></p>
-    </footer>  
+    </footer>
   </body>
 </html>

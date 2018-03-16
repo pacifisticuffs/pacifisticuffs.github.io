@@ -1,4 +1,5 @@
 name: Timothy Lynn
+title: TIMMEH!
 permalink: /posts/:year/:month/:day/:title
 defaults:    
   -

@@ -2,6 +2,7 @@
 title: "Answering FEE Interview Questions - Part 3: CSS"
 date: 2018-02-06
 categories: [CSS]
+excerpt: In this post I'm going to work through some of the CSS questions posed in the <a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions" target="_blank">Front-end Interview Questions</a> repo.
 ---
 
 Previously: [part 1 - general]({% post_url 2018-02-01-frontend-questions-1 %}) --- [part 2 - html]({% post_url 2018-02-01-frontend-questions-2-html %})
@@ -79,9 +80,9 @@ In this post I'm going to work through some of the CSS questions posed in the [F
   width: 1px;
   margin: -1px;
   overflow: hidden;
-  position: absolute;  
+  position: absolute;
 }
-{% endhighlight %}  
+{% endhighlight %}
   </dd>
   <dt><h5><b>Q.</b> Have you ever used a grid system, and if so, what do you prefer?</h5></dt>
   <dd>
@@ -106,7 +107,7 @@ In this post I'm going to work through some of the CSS questions posed in the [F
   <p>A browser will work from right-to-left when matching a CSS selector. That is, given the rule:</p>
 {% highlight css linenos %}
 .main section .time {
-  background-color: #ccc;  
+  background-color: #ccc;
 }
 {% endhighlight %}
   <p>The browser will first seek out any elements with a classname of <code>.time</code>, then traverse up the DOM tree to look for an ancestor <code>&lt;section&gt;</code> element, and then finally traverse up again looking for an ancestor with a classname of <code>.main</code>. This traversal allows it to quickly discard non-matches or only partial matches.</p>
@@ -142,7 +143,7 @@ In this post I'm going to work through some of the CSS questions posed in the [F
 * { box-sizing: border-box; }
 {% endhighlight %}
   <p>This wonderful rule tells every element to include in its width calculation an element's border and padding, giving developer's a predictable and level playing field.</p>
-  </dd>  
+  </dd>
 </dl>
 
 All right, I think that covers enough material for this post. There are more questions remaining in the repo, but I think I've touched on a few of the subjects already that they're asking about.

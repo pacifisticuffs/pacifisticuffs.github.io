@@ -23,9 +23,9 @@ My friend pointed me toward some resources, and I'd like to use this as a stagin
   <p>Some of the biggest performance gains were made with minifying and concatenation, that is obfuscating your JS and CSS with terse variable and function names, removing white space and linefeeds, and mushing several files into one larger one. Gzip over your HTTP connection further improves the speed of this download. For things like icons, we introduced CSS sprites, which put several icons into one file and then shift its position via the <code>background-position</code> CSS property. </p>
   <p>There's a helluva lot more to this than just managing downloads though. Other strategies involve bottom-loading JS, delayed image downloads (which rely upon JS), prioritizing content above the fold, or using things like <abbr title="Accelerated Mobile Pages">AMP</abbr>.</p>
   </dd>
-  <dt><h5><b>Q.</b> Can you describe your workflow when you create a web page?</h5></dt>  
+  <dt><h5><b>Q.</b> Can you describe your workflow when you create a web page?</h5></dt>
   <dd>
-  <p>My workflow has always been to attack the content first, making sure that I'm using the most semantically-appropriate elements and that the page's hierarchy or its structure makes sense even in the absence of styling. I'll never forget years ago at LinkedIn we had a CDN outage, and someone on Twitter had commented that despite there being little to no graphical or layout styles, the content, navigation and (most of) the functionality were still present. We took great pride in using progressive enhancement to make sure that the site remains useable even when things go to shit.</p>  
+  <p>My workflow has always been to attack the content first, making sure that I'm using the most semantically-appropriate elements and that the page's hierarchy or its structure makes sense even in the absence of styling. I'll never forget years ago at LinkedIn we had a CDN outage, and someone on Twitter had commented that despite there being little to no graphical or layout styles, the content, navigation and (most of) the functionality were still present. We took great pride in using progressive enhancement to make sure that the site remains useable even when things go to shit.</p>
   </dd>
   <dt><h5><b>Q.</b> If you jumped on a project and they used tabs and you used spaces, what would you do?</h5></dt>
   <dd>

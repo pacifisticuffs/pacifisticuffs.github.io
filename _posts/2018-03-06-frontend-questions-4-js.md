@@ -2,6 +2,7 @@
 title: "Answering FEE Interview Questions - Part 4: JS"
 date: 2018-03-06
 categories: [JS]
+excerpt: In this post I'm going to work through some of the JS questions posed in the <a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions" target="_blank">Front-end Interview Questions</a> repo.
 ---
 
 Previously: [part 2 - html]({% post_url 2018-02-01-frontend-questions-2-html %}) --- [part 3 - css]({% post_url 2018-02-06-frontend-questions-3-css %})
@@ -26,7 +27,7 @@ In this post I'm going to work through some of the JS questions posed in the [Fr
 {% highlight js linenos %}
 (function(){
   function handler( evt ) {
-    var el = document.querySelector( '.example-1 textarea' );        
+    var el = document.querySelector( '.example-1 textarea' );
     el.innerHTML += this.nodeName + ' class="' + this.className + '"' + '\n';
   }
   var els = document.querySelectorAll( '.example-1 button, .example-1 div' );
@@ -37,7 +38,7 @@ In this post I'm going to work through some of the JS questions posed in the [Fr
 {% endhighlight %}
 <div class="example-1">
   <span class="grandpa">
-    <span class="pops">      
+    <span class="pops">
       <button class="btn btn-success btn-sm">please to click</button>
     </span>
   </span>
@@ -47,7 +48,7 @@ In this post I'm going to work through some of the JS questions posed in the [Fr
 <script>
 (function(){
   function handler( evt ) {
-    var el = document.querySelector( '.example-1 textarea' );        
+    var el = document.querySelector( '.example-1 textarea' );
     el.innerHTML += this.nodeName + ' class="' + this.className + '"' + '\n';
   }
   var els = document.querySelectorAll( '.example-1 button, .example-1 span' );
@@ -65,7 +66,7 @@ if ( this.nodeName == 'BUTTON' ) {
 {% endhighlight %}
 <div class="example-2">
   <span class="grandpa">
-    <span class="pops">      
+    <span class="pops">
       <button class="btn btn-success btn-sm">please to click also</button>
     </span>
   </span><br />
@@ -93,9 +94,9 @@ if ( this.nodeName == 'BUTTON' ) {
 <ul class="example-3">
   <li><span>I'm text in a <code>span</code></span></li>
   <li>And I'm just in a <code>li</code></li>
-  <li><button class="btn btn-success btn-sm">I have a pretty lame 
+  <li><button class="btn btn-success btn-sm">I have a pretty lame
       <code>button</code> el</button></li>
-  <li><p>I'm text in a <code>p</code></p></li>    
+  <li><p>I'm text in a <code>p</code></p></li>
 </ul>
 {% endhighlight %}
 {% highlight js linenos %}
@@ -106,9 +107,9 @@ var el  = document.querySelector( '.example-3' ),
     prev;
 
 function handler( evt ) {
-  // since there are children, we only want to work 
+  // since there are children, we only want to work
   // with the nearest parent LI
-  var target = evt.target.closest( 'li' );      
+  var target = evt.target.closest( 'li' );
   if ( !target | prev == target ) {
     return;
   }
@@ -126,7 +127,7 @@ el.addEventListener( 'click', handler );
     <li><span>I'm text in a <code>span</code></span></li>
     <li>And I'm just in a <code>li</code></li>
     <li><button class="btn btn-success btn-sm">I have a pretty lame <code>button</code> el</button></li>
-    <li><p>I'm text in a <code>p</code></p></li>    
+    <li><p>I'm text in a <code>p</code></p></li>
   </ul>
   <button class="btn btn-info btn-sm" id="add">Click me to add new LIs</button>
   <p>Using the add button, we can dynamically add new items to the list without having to rebind the event handler. This makes debugging easier, your pages more performant, and can help prevent nasty memory issues down the road.</p>
@@ -145,9 +146,9 @@ el.addEventListener( 'click', handler );
         prev;
 
     function handler( evt ) {
-      // since there are children, we only want to work 
+      // since there are children, we only want to work
       // with the nearest parent LI
-      var target = evt.target.closest( 'li' );      
+      var target = evt.target.closest( 'li' );
       if ( !target | prev == target ) {
         return;
       }
@@ -169,7 +170,7 @@ el.addEventListener( 'click', handler );
 {% highlight js linenos %}
 function blurt() {
   return this.a;
-}    
+}
 
 blurt(); // undefined, unless it was previously in the window object
 blurt.call( { a: 99 } ); // 99
@@ -189,8 +190,8 @@ obj.b(); //'TIMMEH!'
 obj.a === obj.b(); // true
 {% endhighlight %}
     <p>In event handlers, <code>this</code> will refer to the element from which the event fired.</p>
-{% highlight html linenos %}<p id="dum">I'm a paragraph with a <span class="text-danger">span</span> 
-tag and a <button class="btn btn-success btn-sm">button</button>. 
+{% highlight html linenos %}<p id="dum">I'm a paragraph with a <span class="text-danger">span</span>
+tag and a <button class="btn btn-success btn-sm">button</button>.
 You should click somewhere in here.</p>
 {% endhighlight %}
 {% highlight js linenos %}
@@ -216,9 +217,9 @@ You should click somewhere in here.</p>
     out.innerHTML += 'evt.currentTarget.nodeName = ' + evt.currentTarget.nodeName;
   })
 })();
-</script>  
+</script>
   </dd>
-{% comment %}  
+{% comment %}
   <dt><h5><b>Q.</b> Explain how prototypal inheritance works</h5></dt>
   <dd>
     <p>There are a couple ways for objects to inherit a prototype. The older way which I was more familiar with was using <code>new</code> with a constructor function:</p>
@@ -290,7 +291,7 @@ function foo() {
 {% highlight js linenos %}
 if ( duh ) { // reference error, stop execution
   console.log( true );
-} 
+}
 else {
   console.log( false );
 }
@@ -308,7 +309,7 @@ console.log( typeof duh === 'undefined' ); // still true
     <p>You can think of <code>null</code> as the explicit absence of value, rather than an implicit absence. A developer might use <code>null</code> to indicate that an object is no longer needed by the application and can be marked for garbage collection. Or he might use it when querying a database, where the user may expect an array but instead has an object whose value is <code>null</code>, meaning there were no records returned.</p>
 
     <h6>How do you check for these states?</h6>
-    <p><code>null</code> has some neat quirks about it:</p>    
+    <p><code>null</code> has some neat quirks about it:</p>
 {% highlight js linenos %}
 var duh = null;
 duh;               // null
@@ -326,7 +327,7 @@ duh === null;      // true
   <dd>
     <p>Closures are often used to create a public/private interface for objects. Let's use the oft-cited example of counting the number of times a button was clicked.</p>
 {% highlight html linenos %}
-<div>  
+<div>
   <button id="btn">CLICK ME!</button>
   <p id="count">You've clicked the button 0 times.</p>
 </div>
@@ -342,7 +343,7 @@ function update() {
 
 button.addEventListener( 'click', update );
 {% endhighlight %}
-<div>  
+<div>
   <button id="btn" class="btn btn-success btn-sm">CLICK ME!</button>
   <p id="count">You've clicked the button 0 times.</p>
 <script>
@@ -360,13 +361,13 @@ button.addEventListener( 'click', update );
     <p>There are some obvious problems with this script. First, it's relying on global variables and polluting our namespace. Second, it's a bit inefficient in that it's grabbing the <code>innerHTML</code> for our output message each time the function runs. An <abbr title="immediately-invoked function expression">IIFE</abbr> could solve those two problems easily, but there's another problem. The interesting and important parts of the function (our count and message) are easily edited by anyone who looks at the variable names. If we can protect those from the global namespace and only expose a simple public method to update the count, we'll be golden. This is where a closure comes in play. This example is pretty contrived as it could've all been easily contained within our IIFE (I'm still using globals here), but it does illustrate a public interface editing private vars.</p>
 {% highlight html linenos %}
 <div>
-  <button id="btn2">CLICK ME TOO!</button> 
+  <button id="btn2">CLICK ME TOO!</button>
   <button id="reset">reset</button>
   <p id="count2">You've clicked the button 0 times.</p>
 </div>
 {% endhighlight %}
 {% highlight js linenos %}
-// The return value of the IIFE will be assigned to update  
+// The return value of the IIFE will be assigned to update
 var update = (function() {
       // private vars only edited within the scope of the IIFE
   var out    = document.getElementById( 'count2' ),
@@ -386,7 +387,7 @@ var update = (function() {
         inc: function() {
           setMsg( count + 1 );
         },
-        reset: function() {        
+        reset: function() {
           setMsg( 0 );
         }
       };
@@ -397,11 +398,11 @@ button.addEventListener( 'click', update.inc );
 reset.addEventListener( 'click', update.reset );
 {% endhighlight %}
 <div>
-  <button id="btn2" class="btn btn-success btn-sm">CLICK ME TOO!</button> 
+  <button id="btn2" class="btn btn-success btn-sm">CLICK ME TOO!</button>
   <button id="reset" class="btn btn-primary btn-sm">reset</button>
   <p id="count2">You've clicked the button 0 times.</p>
 <script>
-// The return value of the IIFE will be assigned to update  
+// The return value of the IIFE will be assigned to update
 var update = (function() {
       // private vars only edited within the scope of the IIFE
   var out    = document.getElementById( 'count2' ),
@@ -421,7 +422,7 @@ var update = (function() {
         inc: function() {
           setMsg( count + 1 );
         },
-        reset: function() {        
+        reset: function() {
           setMsg( 0 );
         }
       };
@@ -441,7 +442,7 @@ var arr = [0,1,2,3];
 arr.forEach(function( val ) {
   console.log( val );
 });
-{% endhighlight %}    
+{% endhighlight %}
     <p><code>.map()</code> on the other hand always returns a new array with the items in the array modified by the callback provided:</p>
 {% highlight js linenos %}
 var arr = [0, 1, 2, 3];
