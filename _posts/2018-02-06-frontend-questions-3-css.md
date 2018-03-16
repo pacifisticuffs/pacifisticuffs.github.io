@@ -2,7 +2,7 @@
 title: "Answering FEE Interview Questions - Part 3: CSS"
 date: 2018-02-06
 categories: [CSS]
-excerpt: In this post I'm going to work through some of the CSS questions posed in the <a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions" target="_blank">Front-end Interview Questions</a> repo.
+excerpt: <p>In this post I'm going to work through some of the CSS questions posed in the <a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions" target="_blank">Front-end Interview Questions</a> repo.</p>
 ---
 
 Previously: [part 1 - general]({% post_url 2018-02-01-frontend-questions-1 %}) --- [part 2 - html]({% post_url 2018-02-01-frontend-questions-2-html %})

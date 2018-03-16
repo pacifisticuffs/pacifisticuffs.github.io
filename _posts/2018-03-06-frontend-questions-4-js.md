@@ -2,7 +2,7 @@
 title: "Answering FEE Interview Questions - Part 4: JS"
 date: 2018-03-06
 categories: [JS]
-excerpt: In this post I'm going to work through some of the JS questions posed in the <a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions" target="_blank">Front-end Interview Questions</a> repo.
+excerpt: <p>In this post I'm going to work through some of the JS questions posed in the <a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions" target="_blank">Front-end Interview Questions</a> repo.</p>
 ---
 
 Previously: [part 2 - html]({% post_url 2018-02-01-frontend-questions-2-html %}) --- [part 3 - css]({% post_url 2018-02-06-frontend-questions-3-css %})
