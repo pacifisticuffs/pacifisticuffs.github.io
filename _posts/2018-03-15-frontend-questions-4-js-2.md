@@ -10,13 +10,13 @@ Previously: [part 3 - css]({% post_url 2018-02-06-frontend-questions-3-css %}) -
 The number of JS questions in the [Front-end Interview Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions){:target="_blank"} repo is pretty extensive, so I'm going to break them up into several blorg posts. This is part 2 of my JS answers.
 
 <dl>
-  <dt><h6><b>Q.</b> Difference between: <code>function Person(){}</code>, <code>var person = Person()</code>, and <code>var person = new Person()</code>?</h6></dt>
+  <dt><h5><b>Q.</b> Difference between: <code>function Person(){}</code>, <code>var person = Person()</code>, and <code>var person = new Person()</code>?</h5></dt>
   <dd>
   <p><code>function Person(){}</code> is a function declaration, creating a named function that can later be called via <code>Person()</code>.</p>
   <p><code>var person = Person()</code> is executing the function named Person, and storing its return value in the variable named person.</p>
   <p><code>var person = new Person()</code> is creating an instance of the object (or class) Person via the constructor pattern. The new object will inherit Person's prototype.</p>
   </dd>
-  <dt><h6><b>Q.</b> What's the difference between <code>.call</code> and <code>.apply</code>?</h6></dt>
+  <dt><h5><b>Q.</b> What's the difference between <code>.call</code> and <code>.apply</code>?</h5></dt>
   <dd>
   <p>The main function of these two methods is to set the context of a function call, so that <code>this</code> assumes the identity of the object that is passed in. Here's what happens without it:</p>
 {% highlight js linenos %}
@@ -69,7 +69,7 @@ drinkBeverage.apply( obj, ['whiskey']);
 {% endhighlight %}
     <p>By passing in an object, our function now has a relevant value for <code>this</code>. The main difference now between <code>.call()</code> and <code>.apply()</code> is that <code>.call()</code> relies upon a list of parameters to be passed to the called function (e.g., <code>.call( obj, param1, param2, param3))</code>, and <code>.apply()</code> uses an array to send params, <code>.apply( obj, [param1, param2, param3])</code>.</p>
   </dd>
-  <dt><h6><b>Q.</b> Explain <code>Function.prototype.bind</code>.</h6></dt>
+  <dt><h5><b>Q.</b> Explain <code>Function.prototype.bind</code>.</h5></dt>
   <dd>
   <p><code>.bind()</code> has a similarity with <code>.call()</code> and <code>.apply()</code>, in that it is used to pass in an object to give context to <code>this</code> within the bound function:</p>
 {% highlight js linenos %}
@@ -96,11 +96,11 @@ drink = drink.bind( null, '1 Bourbon', '1 Scotch' );
 drink( '1 Beer' ); // '1 Bourbon, 1 Scotch, and 1 Beer'
 {% endhighlight %}
   </dd>
-  <dt><h6><b>Q.</b> When would you use <code>document.write()</code>?</h6></dt>
+  <dt><h5><b>Q.</b> When would you use <code>document.write()</code>?</h5></dt>
   <dd>
   <p>You...wouldn't? I honestly can't think of a reason to use it. It's slow, it's blocking, it can't be used after document load.</p>
   </dd>
-  <dt><h6><b>Q.</b> What's the difference between feature detection, feature inference, and using the UA string?</h6></dt>
+  <dt><h5><b>Q.</b> What's the difference between feature detection, feature inference, and using the UA string?</h5></dt>
   <dd>
   <p>UA sniffing is a pretty dated practice, where we'd look at the UA of the request and make decisions based upon what we detected. Usually it was to make up for something silly that IE was about to do.</p>
   <p>Feature inference looks for the availability of some particular object or function, and then infers from its availability that something else is likely available:</p>
