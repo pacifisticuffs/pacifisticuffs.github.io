@@ -261,11 +261,3 @@ blurt(); // logs undefined, then 'hork'
     <p>This question is imposing its own opinion, but it's a valid concern. It's not always a bad idea when it's done safely. See every polyfill out there. What <em>is</em> a bad idea, particularly in multi-developer environments, is overwriting native functionality. Other developers might not be aware of what you've done, or your implementation may be buggy in some way.</p>
   </dd>
 </dl>
-
-{% comment %}
-```
-function duplicate( arr ) {
-  return arr.concat( Array.prototype.slice.call( arr ) );
-}
-```
-{% endcomment %}
