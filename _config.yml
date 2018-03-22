@@ -1,10 +1,12 @@
 name: Timothy Lynn
 title: TIMMEH!
 permalink: /posts/:year/:month/:day/:title
-defaults:    
+defaults:
   -
     scope:
       type: "posts"
     values:
       layout: "post"
       author: "Tim"
+plugins:
+  - jekyll-sitemap
