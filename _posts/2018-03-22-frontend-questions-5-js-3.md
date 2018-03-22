@@ -1,6 +1,6 @@
 ---
 title: "Answering FEE Interview Questions - Part 4: JS the 3th"
-date: 2018-03-20
+date: 2018-03-22
 categories: [JS]
 excerpt: <p>In which I continue to stumble through the seemingly endless trove of <a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions" target="_blank">Front-end Interview Questions</a> and maybe answer them.</p>
 ---
