@@ -1,5 +1,5 @@
 ---
-title: "Answering FEE Interview Questions - Part 4: JS"
+title: "Answering FEE Interview Questions - Part 4: JS the Primero"
 date: 2018-03-06
 categories: [JS]
 excerpt: <p>In this post I'm going to work through some of the JS questions posed in the <a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions" target="_blank">Front-end Interview Questions</a> repo.</p>
