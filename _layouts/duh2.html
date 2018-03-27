@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    {% if jekyll.environment == "production" %}
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114998849-1"></script>
     <script>
@@ -9,7 +10,7 @@
       gtag('js', new Date());
       gtag('config', 'UA-114998849-1');
     </script>
-
+    {% endif %}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="My personal website where I try to look smart discussing things I may not know anything about. Also you can hire me." />
