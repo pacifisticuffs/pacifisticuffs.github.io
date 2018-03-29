@@ -167,9 +167,52 @@ console.log( blurt ); // 1
   </dd>
   <dt><h5><b>Q.</b> What are the differences between ES6 class and ES5 function constructors?</h5></dt>
   <dd>
-    <p></p>
+    <p>I've done a bit of reading about the new ES6 classes. Most describe them as syntactic sugar (ugh, another term I hate) for traditional constructors and prototypal inheritance. There are a lot of articles out there though that poo-poo the idea of having a strict class idiom in JS, but I have to say, they sure are a helluva lot easier to understand at a glance (example nabbed from <a href="https://andywalpole.me/blog/144451/moving-es3es5-es6-javascript-classes" target="_blank">Andy Walpole</a>).</p>
+    <h6>ES5 example:</h6>
+{% highlight js linenos %}
+var Rectangle = function(id, x, y, width, height) {
+    Shape.call(this, id, x, y);
+    this.width = width;
+    this.height = height;
+};
+Rectangle.prototype = Object.create(Shape.prototype);
+Rectangle.prototype.constructor = Rectangle;
+var Circle = function(id, x, y, radius) {
+    Shape.call(this, id, x, y);
+    this.radius = radius;
+};
+Circle.prototype = Object.create(Shape.prototype);
+Circle.prototype.constructor = Circle;
+{% endhighlight %}
+
+<h6>ES6 example:</h6>
+{% highlight js linenos %}
+class Rectangle extends Shape {
+    constructor(id, x, y, width, height) {
+        super(id, x, y);
+        this.width = width;
+        this.height = height;
+    }
+}
+class Circle extends Shape {
+    constructor(id, x, y, radius) {
+        super(id, x, y);
+        this.radius = radius;
+    }
+}
+{% endhighlight %}
+
+    <p>It's the same number of lines, and internally it's doing the same stuff, but the ES6 syntax for me is much easier to read and understand. I don't come from an OOP background and my understanding of JS' prototypal pattern is adequate but not comprehensive, so it's likely a lack of experience that draws me to the ES6 class.</p>
+    <p>Anyway, some details on <code>class</code>:</p>
+    <ul>
+      <li>There's no hoisting for classes -- any instantiation must be done after the class definition</li>
+      <li>No need for use strict. This is ES6, so the engine assumes you want that</li>
+      <li>Class names are pretty much <code>const</code>s and that can't be overwritten</li>
+      <li>The <code>constructor()</code> method can call <code>super()</code> to instantiate the superclass that a subclass extends</li>
+      <li>Classes can be extended using the <code>extends</code> keyword</li>
+    </ul>
   </dd>
-  <dt><h5><b>Q.</b> </h5></dt>
+  <dt><h5><b>Q.</b> Can you offer a use case for the new arrow <code>=></code> function syntax? How does this new syntax differ from other functions?</h5></dt>
   <dd>
     <p></p>
   </dd>
