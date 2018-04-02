@@ -1,7 +1,7 @@
 ---
 title: "Answering FEE Interview Questions - Part 4: JS (el repo está muerto)"
 categories: [JS]
-excerpt: <p>In which I continue to stumble through the seemingly endless trove of <a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions" target="_blank">Front-end Interview Questions</a> and maybe answer them.</p>
+excerpt: <p>A final foray into the <a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions/blob/master/questions/javascript-questions.md" target="_blank">inexhaustible list of JS questions</a> that I've been looking at for the past month.</p>
 ---
 
 Previously: [part 4 - js #2]({% post_url 2018-03-15-frontend-questions-4-js-2 %}) --- [part 4 - js #3]({% post_url 2018-03-15-frontend-questions-4-js-2 %})
@@ -212,28 +212,112 @@ class Circle extends Shape {
       <li>Classes can be extended using the <code>extends</code> keyword</li>
     </ul>
   </dd>
-  <dt><h5><b>Q.</b> Can you offer a use case for the new arrow <code>=></code> function syntax? How does this new syntax differ from other functions?</h5></dt>
+  <dt><h5><b>Q.</b> Can you offer a use case for the new arrow <code>=&gt;</code> function syntax? How does this new syntax differ from other functions? What advantage is there for using the arrow syntax for a method in a constructor?</h5></dt>
   <dd>
-    <p></p>
+    <p>Here are some of the differences in arrow function syntax and usage:</p>
+    <ul>
+      <li>No more <code>function</code> keyword needed (wow, huge time savings!)</li>
+      <li>It lets you omit parenthesis when you have only one input param, omit curlies and the <code>return</code> statement when you're implicitly returning something (wow, huge time savings!)</li>
+      <li>Can't be used as constructors</li>
+      <li>Have no <code>arguments</code> object</li>
+      <li>It takes its <code>this</code> from the enclosing lexical context</li>
+    </ul>
+    <p>My sarcasm is hopefully obvious, because I generally object to anything that removes punctuation or important symbols from code. They're there because they remove ambiguity, which is a pretty important feature in any code.</p>
+    <p>The last bullet is great though, and hugely beneficial when composing objects.</p>
+{% highlight js linenos %}
+var obj1 = {
+  timer: undefined,
+  count: 0,
+  int: function() {
+    // set interval is gonna be all screwed up because its
+    // `this` is really pointing to the global object (`window`)
+    this.timer = setInterval( function() {
+      console.log( this.count++ ); // NaN NaN NaN NaN
+      if ( this.count > 5 ) {
+        clearInterval( this.timer );
+      }
+    }, 1000 );
+  }
+};
+
+var obj2 = {
+  timer: undefined,
+  count: 0,
+  int: function() {
+    // fat arrow here takes its `this` from the enclosing
+    // object. easy-peasy!
+    this.timer = setInterval( () => {
+      console.log( this.count++ ); // 0 1 2 3 4 5
+      if ( this.count > 5 ) {
+        clearInterval( this.timer );
+      }
+    }, 1000 );
+  }
+};
+
+obj1.int();
+obj2.int();
+clearInterval( obj1.timer );
+{% endhighlight %}
+    <p>In the above script, <code>obj1</code>'s version of <code>.int()</code> will never stop spamming your console because <code>this</code> is referring to the global <code>window</code> object, unlike <code>obj2</code>'s version which doesn't bind <code>this</code> and takes it from the object in which the function is defined. This is great because it doesn't require an additional call to <code>.bind()</code> (in fact you <em>can't</em> use <code>.bind()</code>, <code>.call()</code>, or <code>.apply()</code> to change the value of <code>this</code>), or creating a closure like <code>var self = this</code> in enclosing function <code>.int()</code>. In my opinion this is one of the very cool features of the new syntax.</p>
   </dd>
-  <dt><h5><b>Q.</b> </h5></dt>
+  <dt><h5><b>Q.</b> What is the definition of a higher-order function?</h5></dt>
   <dd>
-    <p></p>
+    <p>Functions are first-class members in JS, meaning they can be passed as arguments, returned from other functions (or even overwriting themselves), assigned as a property to an object, or assigned to variables. The first two qualities listed there are what define a  higher-order function. In addition to those we've all probably written ourselves without knowing what they're called, there are many available in JS already (e.g. <code>Array.prototype</code> functions <code>.reduce()</code>, <code>.filter()</code>, or <code>.map()</code>).</p>
   </dd>
-  <dt><h5><b>Q.</b> </h5></dt>
+  <dt><h5><b>Q.</b> Can you give an example for destructuring an object or an array?</h5></dt>
   <dd>
-    <p></p>
+    <p>I just learned about this while reading about higher-order functions. It's a way of extracting (potentially multiple) values from objects and arrays. Here are some simple examples:</p>
+{% highlight js linenos %}
+var [ first, second ] = [ 1, 2, 3, 4, 5 ];
+console.log( first, second ); // 1 2
+var { first: fname, last: lname } = { first: 'tim', last: 'lynn' };
+console.log( fname, lname ); // tim lynn
+
+var arr = [ 1, 2, 3, 4, 5 ];
+for (let x = 0, { length } = arr; x < length; x++ ) {
+  console.log( arr[ x ] );
+}
+{% endhighlight %}
   </dd>
-  <dt><h5><b>Q.</b> </h5></dt>
+  <dt><h5><b>Q.</b> Can you give an example of a curry function and why this syntax offers an advantage?</h5></dt>
   <dd>
-    <p></p>
-  </dd>
-  <dt><h5><b>Q.</b> </h5></dt>
-  <dd>
-    <p></p>
-  </dd>
-  <dt><h5><b>Q.</b> </h5></dt>
-  <dd>
-    <p></p>
+    <p>Curried functions allow you to write generic functions with varying parameter requirements and either get a result, or a new function with partially-applied parameters. (code samples below snagged from a concise writeup at <a href="https://blog.carbonfive.com/2015/01/14/gettin-freaky-functional-wcurried-javascript/" target="_blank">Carbon Five</a>):</p>
+{% highlight js linenos %}
+function add2dumbNums( x ) {
+  return function( y ) {
+    return x + y;
+  }
+}
+var add20 = add2dumbNums( 20 );
+add20( 20 ); // 40
+add20( -20 ); // 0
+{% endhighlight %}
+    <p>This is a pretty bad example because it requires hard-wiring nested functions for each of the expected params. A better way to do this is to use a currying function which will look at the provided parameters and either execute the function with all the required parameters, or return a curried function to which you can pass additional params to fulfill its expectations.</p>
+{% highlight js linenos %}
+function curry(fx) {
+  var arity = fx.length;
+
+  return function f1() {
+    var args = Array.prototype.slice.call( arguments, 0 );
+    if ( args.length >= arity ) {
+      return fx.apply( null, args );
+    }
+    else {
+      return function f2() {
+        var args2 = Array.prototype.slice.call( arguments, 0 );
+        return f1.apply( null, args.concat( args2 ) );
+      }
+    }
+  };
+}
+
+var add4nums = curry( ( a, b, c, d ) => a + b + c + d );
+// creates a function that will add 10 to 3 additional nums
+var add10 = add4nums( 10 );
+// creates a function that will subtract 10 from the sum of 3 additional nums
+var sub10 = add4nums( -10 );
+{% endhighlight %}
   </dd>
 </dl>
+I think I'll finish up this stupidly-long post here. There are a couple more questions in the repo that I've omitted in the interest of not boring you (and not feeling like a complete knob because I can't write a good explanation for it).
