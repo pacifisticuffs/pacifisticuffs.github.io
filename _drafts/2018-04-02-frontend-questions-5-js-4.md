@@ -2,6 +2,7 @@
 title: "Answering FEE Interview Questions - Part 4: JS (el repo está muerto)"
 categories: [JS]
 excerpt: <p>A final foray into the <a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions/blob/master/questions/javascript-questions.md" target="_blank">inexhaustible list of JS questions</a> that I've been looking at for the past month.</p>
+date: 2018-04-02
 ---
 
 Previously: [part 4 - js #2]({% post_url 2018-03-15-frontend-questions-4-js-2 %}) --- [part 4 - js #3]({% post_url 2018-03-15-frontend-questions-4-js-2 %})
