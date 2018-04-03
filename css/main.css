@@ -52,6 +52,11 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-overflow-scrolling: touch;
 }
 
+.me {
+  max-width: 115px;
+  border-radius: 57px;
+}
+
 /* .nav-scroller .nav-link {
   padding-top: .75rem;
   padding-bottom: .75rem;
