@@ -38,7 +38,7 @@ for ( var i = 0, l = keys.length; i < l; i++ ) {
     <p>I had to do a bit more reading on this question. Inherently, I know that <em>mutability</em> just means that we can change its properties. We can create an object <code>var obj = { prop1 : true };</code>, and later modify that object, <code>obj.prop1 = false; obj.prop2 = true;</code>. If we state that <code>var obj2 = obj;</code>, then any modifications to either <code>obj</code> or <code>obj2</code> will still yield the same result of <code>obj === obj2; // true</code>.</p>
     <p><em>Immutability</em> is a little stranger to grasp. In JS, strings and numbers are immutable. All string and number operations return a new instance rather than modifying the original. <code>2 + 3</code> yields a new number rather than modifying the meaning or value of 2.</p>
     <p>Objects can be made immutable in JS through developer discipline, and significantly helped through the use of a library like <a href="https://facebook.github.io/immutable-js/" target="_blank">Immutable.js</a>. The basic gist is that any modification to an existing object yields a new object. The developer must stop using dot notation to mutate an object, and instead uses setter functions.</p>
-    <p>The main benefit of immutability is the ability to check is the state of an object has changed. This is great for libraries like <a href="https://reactjs.org/" target="_blank">React</a>. The components on a page don't necessarily need to know <em>what</em> changed in an object's state, they just need to know that an object <em>has</em> changed, so it can then re-render. A component no longer needs to do a potentially-deep value check on an object. It can just look and see that <code>newState !== oldState</code> quickly and easily.</p>
+    <p>The main benefit of immutability is the ability to check if the state of an object has changed. This is great for libraries like <a href="https://reactjs.org/" target="_blank">React</a>. The components on a page don't necessarily need to know <em>what</em> changed in an object's state, they just need to know that an object <em>has</em> changed, so it can then re-render. A component no longer needs to do a potentially-deep value check on an object. It can just look and see that <code>newState !== oldState</code> quickly and easily.</p>
     <p>The major downside to using immutable objects in JS is that it's a pretty foreign concept for most JS developers. It requires a developer and any team of developers to stop accessing an object's properties through traditional methods, and instead rely exclusively on mutation methods that always return a new object.</p>
   </dd>
   <dt><h5><b>Q.</b> Explain the difference between synchronous and asynchronous functions.</h5></dt>
@@ -158,7 +158,7 @@ if (blurt === 1) {
 
   // and now a 3rd instance of `blurt` local only to this for loop!
   for ( let blurt = 1; blurt < 3; blurt++ ) {
-    console.log( 'looping: ' + blurt ); // 1 2 2
+    console.log( 'looping: ' + blurt ); // 1 2
   }
   console.log( 'exiting if: ' + blurt ); // 2
 }
@@ -203,12 +203,12 @@ class Circle extends Shape {
 }
 {% endhighlight %}
 
-    <p>It's the same number of lines, and internally it's doing the same stuff, but the ES6 syntax for me is much easier to read and understand. I don't come from an OOP background and my understanding of JS' prototypal pattern is adequate but not comprehensive, so it's likely a lack of experience that draws me to the ES6 class.</p>
+    <p>It's the same number of lines, and internally it's doing the same stuff, but the ES6 syntax for me is much easier to read and understand. I don't come from an OOP background and my understanding of JS' prototypal pattern is far from comprehensive, so it's likely a lack of experience that draws me to the ES6 class.</p>
     <p>Anyway, some details on <code>class</code>:</p>
     <ul>
       <li>There's no hoisting for classes -- any instantiation must be done after the class definition</li>
-      <li>No need for use strict. This is ES6, so the engine assumes you want that</li>
-      <li>Class names are pretty much <code>const</code>s and that can't be overwritten</li>
+      <li>No need for <code>'use strict'</code>. This is ES6, so the engine assumes you want that</li>
+      <li>Class names are pretty much <code>const</code>s and can't be overwritten</li>
       <li>The <code>constructor()</code> method can call <code>super()</code> to instantiate the superclass that a subclass extends</li>
       <li>Classes can be extended using the <code>extends</code> keyword</li>
     </ul>
@@ -276,6 +276,7 @@ var { first: fname, last: lname } = { first: 'tim', last: 'lynn' };
 console.log( fname, lname ); // tim lynn
 
 var arr = [ 1, 2, 3, 4, 5 ];
+// same as `length = arr.length`
 for (let x = 0, { length } = arr; x < length; x++ ) {
   console.log( arr[ x ] );
 }
