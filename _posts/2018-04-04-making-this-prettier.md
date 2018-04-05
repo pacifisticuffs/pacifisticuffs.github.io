@@ -6,7 +6,7 @@ image: /images/posts/IMG_2125.jpg
 date: 2018-04-04
 ---
 
-I'm not a designer. Not by any stretch of the imagination. I like to think I have an appreciation for good design, but the truth is that I don't see color worth a damn and couldn't tell you which fonts are which. Leading is something bad you don't want while snacking on paint chips, and kerning is a frog digs on swine.
+I'm not a designer. Not by any stretch of the imagination. I like to think I have an appreciation for good design, but the truth is that I don't see color worth a damn and couldn't tell you which fonts are which. Leading is something bad you don't want while snacking on paint chips, and kerning is a frog that digs on swine.
 
 This template was an <a href="https://getbootstrap.com/docs/4.0/examples/blog/" target="_blank">example</a> kindly provided by Bootstrap. It had a nice jumbotron section, with some featured posts below that I wasn't using. As I continued to write stuff for this site, I realized that my home page looked like, well, <em>ass</em>, and I needed some more color and stuff to make it not-so-assy.
 
