@@ -19,7 +19,7 @@
 
     <title>{{ page.title }}</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900%7CRoboto" rel="stylesheet" />
     <link href="/css/main.css" rel="stylesheet" />
 
@@ -27,7 +27,7 @@
     {% comment %}
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
     {% endcomment %}
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous" defer></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous" defer></script>
 
   </head>
 
@@ -41,6 +41,7 @@
           </div>
         </div>
       </header>
+
       {% comment %}
       <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
@@ -50,52 +51,70 @@
           {% endfor %}
         </nav>
       </div>
-
-      <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
-        <div class="col-md-6 px-0">
-          <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-          <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
-          <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
-        </div>
-      </div>
-
-      <div class="row mb-2">
-        <div class="col-md-6">
-          <div class="card flex-md-row mb-4 box-shadow h-md-250">
-            <div class="card-body d-flex flex-column align-items-start">
-              <strong class="d-inline-block mb-2 text-primary">World</strong>
-              <h3 class="mb-0">
-                <a class="text-dark" href="#">Featured post</a>
-              </h3>
-              <div class="mb-1 text-muted">Nov 12</div>
-              <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-              <a href="#">Continue reading</a>
-            </div>
-            <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card flex-md-row mb-4 box-shadow h-md-250">
-            <div class="card-body d-flex flex-column align-items-start">
-              <strong class="d-inline-block mb-2 text-success">Design</strong>
-              <h3 class="mb-0">
-                <a class="text-dark" href="#">Post title</a>
-              </h3>
-              <div class="mb-1 text-muted">Nov 11</div>
-              <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-              <a href="#">Continue reading</a>
-            </div>
-            <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
-          </div>
-        </div>
-      </div>
       {% endcomment %}
+
+      {% assign feature1 = false %}
+      {% assign feature2 = false %}
+      {% assign feature3 = false %}
+
+      {% for post in site.posts %}
+        {% if post.omit %}
+          {% continue %}
+        {% endif %}
+        {% if feature1 and feature2 and feature3 %}
+          {% break %}
+        {% endif %}
+
+        {% if feature1 != true %}
+          <style>
+            .biglink::after {
+              background-image: url('{{post.image}}');
+            }
+          </style>
+          <a href="{{ post.url }}" class="biglink">
+            <div class="jumbotron p-3 p-md-5 text-white rounded">
+              <div class="col-md-9 p-2 content">
+                <h2 class="display-4">{{ post.title }}</h2>
+                <div class="lead my-3"><p>{{ post.excerpt | strip_html }}</p></div>
+              </div>
+            </div>
+          </a>
+          {% assign feature1 = true %}
+        <div class="row mb-2">
+          {% continue %}
+        {% endif %}
+
+      {% unless feature2 and feature3 %}
+        <div class="col-md-6 feature">
+          <a href="{{ post.url }}">
+            <div class="card flex-md-row mb-4 box-shadow h-md-250 text-white bg-secondary">
+              <div class="card-body d-flex flex-column align-items-start">
+                <h3 class="blog-post-title mb-2">{{ post.title }}</h3>
+                <div class="mb-3 text-dark">{{ post.date | date: "%A %B %e, %Y" }}</div>
+                <div class="card-text mb-auto">
+                  <p>{{ post.excerpt | strip_html }}</p>
+                  <p>Continue reading &raquo;</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        {% if feature2 == false %}
+          {% assign feature2 = true %}
+          {% continue %}
+        {% elsif feature3 == false %}
+          {% assign feature3 = true %}
+          {% break %}
+        {% endif %}
+      {% endunless %}
+      {% endfor %}
+      </div>
     </div>
 
     <main class="container">
       <div class="row">
         <div class="col-md-8 blog-main">
-          <h2 class="pb-3 mb-4 font-italic border-bottom">
+          <h2 class="pb-3 mb-4 border-bottom">
             Blorg blorg blorg
           </h2>
 
@@ -111,14 +130,15 @@
         </div><!-- /.blog-main -->
 
         <aside class="col-md-4 blog-sidebar">
+
           <div class="p-3 mb-3 bg-light rounded">
-            <h4 class="font-italic">About</h4>
-            <p class="mb-0">This is a site in which I'm trying to write about things I'm learning as I prepare to get back into tech professionally. Turns out, if you take time off from it, you get dumb.</p>
+            <h4>About</h4>
+            <p class="mb-0 clearfix"><img src="/images/timsfathead.jpg" class="me float-right" alt="A portrait of the author as a guy wearing sunglasses" /> I'm Tim Lynn. This is what I look like sometimes. I write about things I'm learning as I prepare to get back into tech professionally. Turns out, if you take time off from it, you get dumb.</p>
           </div>
 
           {% comment %}
           <div class="p-3">
-            <h4 class="font-italic">Archives</h4>
+            <h4>Archives</h4>
             <ol class="list-unstyled mb-0">
               <li><a href="#">March 2014</a></li>
               <li><a href="#">February 2014</a></li>
@@ -136,7 +156,7 @@
           </div>
 
           <div class="p-3">
-            <h4 class="font-italic">Elsewhere</h4>
+            <h4>Elsewhere</h4>
             <ol class="list-unstyled">
               <li><a href="#">GitHub</a></li>
               <li><a href="#">Twitter</a></li>
@@ -150,9 +170,6 @@
 
     </main><!-- /.container -->
 
-    <footer class="blog-footer">
-      <p><small>I didn't build this template, but hopefully modified it nicely. Originally done by <a href="https://twitter.com/mdo">@mdo</a>.</small></p>
-      <p><a href="#top">Back to top</a></p>
-    </footer>
+    {% include footer.html %}
   </body>
 </html>

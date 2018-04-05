@@ -2,11 +2,10 @@
 layout: duh2
 title: TIMMEH!
 ---
-{% for post in site.posts %}
+{% for post in site.posts offset: 3 %}
 <article class="blog-post border-bottom">
 	<header>
 			<h3 class="blog-post-title"><a href="{{ post.url }}" class="text-dark">{{ post.title }}</a></h3>
-			{% comment %} <h3 class="blog-post-title">{{ post.title }}</h3>{% endcomment %}
 		<p class="blog-post-meta">{{ post.date | date: "%A %B %e, %Y" }} by {{ post.author }}</p>
 	</header>
 	<div class="entry-content">

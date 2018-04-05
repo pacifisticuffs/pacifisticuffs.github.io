@@ -22,12 +22,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .display-4 {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 @media (min-width: 768px) {
   .display-4 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -122,9 +122,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .blog-post-title {
-  margin-bottom: .25rem;
   font-size: 1.9rem;
 }
+
+.feature .blog-post-title {
+  font-size: 1.25rem;
+
+}
+
+.feature .card-text {
+  font-size: 0.9rem;
+}
+
 .blog-post-meta {
   margin-bottom: 1.25rem;
   color: #999;
@@ -145,6 +154,51 @@ blockquote:before {
   line-height: 0;
   vertical-align: -.41em;
   padding: 0 .1em 0 .1em;
+}
+.biglink {
+  display: block;
+  position: relative;
+}
+a.biglink:hover {
+  text-decoration: none;
+}
+.biglink::after {
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  transition: opacity 0.25s, background-position 5s;
+  width: 100%;
+  z-index: -1;
+}
+.biglink:focus::after,
+.biglink:hover::after {
+  background-position: right 50%;
+  opacity: 1;
+}
+.jumbotron {
+  background: transparent;
+}
+.biglink .content {
+  background: rgba( 0, 0, 0, 0.4 );
+}
+.biglink:hover .content {
+  background: rgba( 0, 0, 0, 0.5 );
+}
+.feature a:hover {
+  text-decoration: none;
+}
+.feature .box-shadow {
+  transition: 0.3s all;
+}
+.feature a:hover .box-shadow,
+.feature a:focus .box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba( 0, 0, 0, .5 );
 }
 
 /*

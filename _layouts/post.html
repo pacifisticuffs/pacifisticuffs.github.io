@@ -20,12 +20,13 @@
 
     <title>{{ site.title }} | {{ page.title }}</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900%7CRoboto" rel="stylesheet" />
     <link href="/css/main.css" rel="stylesheet" />
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous" defer></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous" defer></script>
+
 
   </head>
 
@@ -102,6 +103,9 @@
                     <p class="blog-post-meta">{{ page.date | date: "%A %B %e, %Y" }} by {{ page.author }}</p>
                 </header>
                 <div class="entry-content">
+                  {% if page.image != "" %}
+                    <p><img src="{{page.image}}" class="img-fluid" /></p>
+                  {% endif %}
                   {{ content }}
                 </div>
                 <footer class="blog-post-meta">
@@ -117,12 +121,13 @@
         </div><!-- /.blog-main -->
 
         <aside class="col-md-4 blog-sidebar">
+          {% comment %}
           <div class="p-3 mb-3 bg-light rounded">
             <h4 class="font-italic">About</h4>
             <p class="mb-0">This is a site in which I'm trying to write about things I'm learning as I prepare to get back into tech professionally. Turns out, if you take time off from it, you get dumb.</p>
           </div>
 
-          {% comment %}
+
           <div class="p-3">
             <h4 class="font-italic">Archives</h4>
             <ol class="list-unstyled mb-0">
@@ -156,9 +161,6 @@
 
     </main><!-- /.container -->
 
-    <footer class="blog-footer">
-      <p><small>I didn't build this template, but hopefully modified it nicely. Originally done by <a href="https://twitter.com/mdo">@mdo</a>.</small></p>
-      <p><a href="#top">Back to top</a></p>
-    </footer>
+    {% include footer.html %}
   </body>
 </html>
