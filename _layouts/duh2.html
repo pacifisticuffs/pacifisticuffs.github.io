@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
   <head>
+    {% seo %}
+
     {% if jekyll.environment == "production" %}
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114998849-1"></script>
@@ -13,18 +15,8 @@
     {% endif %}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="My personal website where I try to look smart discussing things I may not know anything about. Also you can hire me." />
-    <meta name="author" content="Timothy Lynn" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=694yOAxke9" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=694yOAxke9" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=694yOAxke9" />
-    <link rel="manifest" href="/site.webmanifest?v=694yOAxke9" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=694yOAxke9" color="#5bbad5" />
-    <link rel="shortcut icon" href="/favicon.ico?v=694yOAxke9" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
 
-    <title>{{ page.title }}</title>
+    {% include favicons.html %}
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900%7CRoboto" rel="stylesheet" />
@@ -39,7 +31,6 @@
   </head>
 
   <body>
-
     <div class="container" id="top">
       <header class="blog-header py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">

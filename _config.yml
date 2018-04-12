@@ -1,5 +1,5 @@
 name: Timothy Lynn
-title: TIMMEH!
+title: Timothy Lynn
 permalink: /posts/:year/:month/:day/:title
 defaults:
   -
@@ -7,6 +7,12 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Tim"
+      author: "Timothy Lynn"
 plugins:
   - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+repository: pacifisticuffs/pacifisticuffs.github.io
+url: http://timothylynn.com/
+author:
+  name: Timothy Lynn
