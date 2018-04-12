@@ -59,18 +59,26 @@
             <article class="blog-post border-bottom">
                 <header>
                     <h3>{{ page.title }}</h3>
-                    <p class="blog-post-meta">{{ page.date | date: "%A %B %e, %Y" }} by {{ page.author }}<br />
+                    <p class="blog-post-meta">
+                      {% if page.date and page.date != "" %}
+                        {{ page.date | date: "%A %B %e, %Y" }}
+                      {% endif %}
+                      {% if page.author and page.author != "" %}
+                        by {{ page.author }}<br />
+                      {% endif %}
                     {% include reading_time.html %}</p>
                 </header>
                 <div class="entry-content">
-                  {% if page.image != "" %}
+                  {% if page.image and page.image != "" %}
                     <p><img src="{{page.image}}" class="img-fluid rounded box-shadow" /></p>
                   {% endif %}
                   {{ content }}
                 </div>
+                {% if page.categories %}
                 <footer class="blog-post-meta">
                   <p>Posted under: {{ page.categories | join: ", "}}</p>
                 </footer>
+                {% endif %}
           {% comment %}
           <nav class="blog-pagination">
             <a class="btn btn-outline-primary" href="#">Older</a>
