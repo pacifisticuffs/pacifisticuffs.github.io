@@ -4,16 +4,16 @@ title: TIMMEH!
 ---
 {% for post in site.posts offset: 3 %}
 <article class="blog-post border-bottom">
-	<header>
-			<h3 class="blog-post-title"><a href="{{ post.url }}" class="text-dark">{{ post.title }}</a></h3>
-		<p class="blog-post-meta">{{ post.date | date: "%A %B %e, %Y" }} by {{ post.author }}</p>
-	</header>
-	<div class="entry-content">
-		{{ post.excerpt }}
-		<p><a class="btn btn-secondary btn-sm" href="{{ post.url }}" role="button">Continue reading &raquo;</a></p>
-	</div>
-	<footer class="blog-post-meta">
-		<p>Posted under: {{ post.categories | join: ", "}}</p>
-	</footer>
+  <header>
+    <h3 class="blog-post-title"><a href="{{ post.url }}" class="text-dark">{{ post.title }}</a></h3>
+    <p class="blog-post-meta">{{ post.date | date: "%A %B %e, %Y" }} by {{ post.author }}</p>
+  </header>
+  <div class="entry-content">
+    {{ post.excerpt }}
+    <p><a class="btn btn-secondary btn-sm" href="{{ post.url }}" role="button">Continue reading &raquo;</a></p>
+  </div>
+  <footer class="blog-post-meta">
+  <p>Posted under: {{ post.categories | join: ", "}}</p>
+  </footer>
 </article><!-- /.blog-post -->
 {% endfor %}
