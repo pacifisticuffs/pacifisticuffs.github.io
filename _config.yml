@@ -13,6 +13,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-feed
 repository: pacifisticuffs/pacifisticuffs.github.io
-url: http://timothylynn.com/
+url: http://timothylynn.com
 author:
   name: Timothy Lynn
