@@ -31,7 +31,7 @@ In this post I'm going to work through some of the JS questions posed in the [Fr
     el.innerHTML += this.nodeName + ' class="' + this.className + '"' + '\n';
   }
   var els = document.querySelectorAll( '.example-1 button, .example-1 div' );
-  for( i = 0; i < els.length; i++ ){
+  for( var i = 0; i < els.length; i++ ){
     els[ i ].addEventListener( 'click', handler );
   }
 })();
@@ -52,7 +52,7 @@ In this post I'm going to work through some of the JS questions posed in the [Fr
     el.innerHTML += this.nodeName + ' class="' + this.className + '"' + '\n';
   }
   var els = document.querySelectorAll( '.example-1 button, .example-1 span' );
-  for( i = 0; i < els.length; i++ ){
+  for( var i = 0; i < els.length; i++ ){
     els[ i ].addEventListener( 'click', handler );
   }
 })();
@@ -82,7 +82,7 @@ if ( this.nodeName == 'BUTTON' ) {
       el.innerHTML += this.nodeName + ' class="' + this.className + '"' + '\n';
     }
   var els = document.querySelectorAll( '.example-2 button, .example-2 span' );
-  for( i = 0; i < els.length; i++ ){
+  for( var i = 0; i < els.length; i++ ){
     els[ i ].addEventListener( 'click', handler );
   }
 })();
