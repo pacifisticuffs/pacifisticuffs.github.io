@@ -20,7 +20,7 @@
     {% include favicons.html %}
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900%7CRoboto" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CPlayfair+Display:700,900%7CRoboto" rel="stylesheet" />
     <link href="/css/main.css" rel="stylesheet" />
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -56,35 +56,40 @@
     <main class="container">
       <div class="row">
         <div class="col-md-8 blog-main">
-            <article class="blog-post border-bottom">
-                <header>
-                    <h3>{{ page.title }}</h3>
-                    <p class="blog-post-meta">
-                      {% if page.date and page.date != "" %}
-                        {{ page.date | date: "%A %B %e, %Y" }}
-                      {% endif %}
-                      {% if page.author and page.author != "" %}
-                        by {{ page.author }}<br />
-                      {% endif %}
-                    {% include reading_time.html %}</p>
-                </header>
-                <div class="entry-content">
-                  {% if page.image and page.image != "" %}
-                    <p><img src="{{page.image}}" class="img-fluid rounded box-shadow" /></p>
-                  {% endif %}
-                  {{ content }}
-                </div>
-                {% if page.categories %}
-                <footer class="blog-post-meta">
-                  <p>Posted under: {{ page.categories | join: ", "}}</p>
-                </footer>
+          <article class="blog-post border-bottom" data-next-url={{ page.previous.url | jsonify }}>
+            <header>
+              <h3>{{ page.title }}</h3>
+              <p class="blog-post-meta">
+                {% if page.date and page.date != "" %}
+                  {{ page.date | date: "%A %B %e, %Y" }}
                 {% endif %}
-          {% comment %}
-          <nav class="blog-pagination">
-            <a class="btn btn-outline-primary" href="#">Older</a>
-            <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
-          </nav>
-          {% endcomment %}
+                {% if page.author and page.author != "" %}
+                  by {{ page.author }}<br />
+                {% endif %}
+                {% include reading_time.html %}</p>
+            </header>
+            <div class="entry-content">
+              {% if page.image and page.image != "" %}
+                <figure class="figure">
+                  <img src="{{page.image}}" class="figure-img img-fluid rounded box-shadow" alt="{{ page.caption }}" />
+                  {% if page.caption and page.caption != "" %}
+                  <figcaption class="figure-caption">{{ page.caption }}</figcaption>
+                  {% endif %}
+                </figure>
+              {% endif %}
+              {{ content }}
+            </div>
+            {% if page.categories %}
+              <footer class="blog-post-meta">
+                <p>Posted under: {{ page.categories | join: ", "}}</p>
+              </footer>
+            {% endif %}
+            {% comment %}
+            <nav class="blog-pagination">
+              <a class="btn btn-outline-primary" href="#">Older</a>
+              <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+            {% endcomment %}
           </article><!-- /.blog-post -->
         </div><!-- /.blog-main -->
 
@@ -130,5 +135,6 @@
     </main><!-- /.container -->
 
     {% include footer.html %}
+
   </body>
 </html>

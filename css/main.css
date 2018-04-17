@@ -201,9 +201,43 @@ a.biglink:hover {
   box-shadow: 0 0.25rem 0.75rem rgba( 0, 0, 0, .5 );
 }
 
-/*
-* Footer
-*/
+.infinitely-scrolled {
+  opacity: 1;
+  transition: opacity 0.75s;
+}
+
+.article-loader {
+  opacity: 0;
+}
+
+/**
+ * Following are used for the loading spinner on infinite scrolly pages
+ *
+ **/
+ .loader {
+   font-size: 2rem;
+   animation: textthrob 2s infinite linear;
+   text-align: center;
+   margin: 20px auto;
+  }
+
+.glyphicon-refresh-animate {
+  animation: spin 1s infinite linear;
+}
+
+@keyframes textthrob {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+@keyframes spin {
+  from { transform: scale(2) rotate(0deg);}
+  to { transform: scale(2) rotate(360deg);}
+}
+
+/**
+ * Footer
+ */
 .blog-footer {
   padding: 1rem 0;
   color: #999;
