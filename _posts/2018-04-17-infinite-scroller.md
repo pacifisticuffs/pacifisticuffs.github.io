@@ -75,6 +75,6 @@ Or don't, I don't have any way to leave comments or feedback here, sucker.
 
 It was a good exercise. I was happy to dig into `xhr` and discover that it can return a full html document, complete with its own DOM methods. I was also happy to write it all in vanilla JS, granted I'm relying upon modern stuff that is likely not at all cross-browser friendly.
 
-You can <a href="" target="_blank">view the code for the scroller on GitHub</a>.
+You can <a href="https://github.com/pacifisticuffs/pacifisticuffs.github.io/blob/master/js/infinite_scroll.js" target="_blank">view the code for the scroller on GitHub</a>.
 
 <script src="/js/infinite_scroll.js" defer></script>
