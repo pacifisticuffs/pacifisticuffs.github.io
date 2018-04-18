@@ -2,7 +2,12 @@
 layout: duh2
 title: TIMMEH!
 ---
-{% for post in site.posts offset: 3 %}
+{% assign counter = 1 %}
+{% for post in site.posts %}
+  {% if post.omit != true and counter <= 3 %}
+    {% assign counter = counter | plus: 1 %}
+    {% continue %}
+  {% endif %}
 <article class="blog-post border-bottom">
   <header>
     <h3 class="blog-post-title"><a href="{{ post.url }}" class="text-dark">{{ post.title }}</a></h3>
