@@ -91,10 +91,10 @@
   /**
    * Shows or hides the loading spinner
    *
-   * @param {String} mode `on` will show it, anything else will hide it
+   * @param {Boolean} mode `true` will show it, anything else will hide it
    */
-  const loader = mode => {
-    if ( mode == 'on' ) {
+  const loader = show => {
+    if ( show === true ) {
       CONTAINER.appendChild( LOADER );
     }
     else {
@@ -113,7 +113,7 @@
     if ( !carryOn() ) return;
 
     // Show the loading spinner
-    loader( 'on' );
+    loader( true );
 
     let xhr = new XMLHttpRequest();
 
