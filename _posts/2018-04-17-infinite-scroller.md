@@ -4,7 +4,7 @@ categories: [js]
 excerpt: <p><a href="https://dxprog.com/" target="_blank">My friend</a> mentioned that building an infinite scroller was a good exercise for a technical interview. I'd never done it, so I figured I'd give it a try.</p>
 image: /images/posts/IMG_9839.jpg
 caption: Me and my wife, along with a couple friends, <em>finitely</em> scrolling in Cabo San Lucas
-# date: 2018-04-04
+date: 2018-04-17
 ---
 
 This is a task I've never had to do in my professional career. I think if I were asked to implement one, I'd likely look for an existing jQuery plugin or React component, depending on what was already available in our codebase. I've been trying to approach all my exercises here in vanilla JS, so that's the route I took with this as well.
