@@ -171,10 +171,11 @@
       fetching = false;
     });
 
+    fetching = true;
+
     // artificial delay to allow loading spinner to show
     setTimeout( () => {
       xhr.open( 'GET', nextArticle() );
-      fetching = true;
       xhr.send();
     }, 500 );
   }
