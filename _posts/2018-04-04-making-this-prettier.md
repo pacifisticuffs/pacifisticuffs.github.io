@@ -3,6 +3,7 @@ title: Making This Thing Prettier
 categories: [setup, about, jekyll]
 excerpt: <p>I wanted to make use of this template's nicer "featured posts" layout to get some more color and pop, but making liquid do what I want was an ugly mess. Here's how I did it.</p>
 image: /images/posts/IMG_2125.jpg
+caption: Stopped at the <a href="https://www.treesofmystery.net/" target="_blank">Trees of Mystery</a> on an epic road trip up HWY1 &amp; 101, north to the tip of Washington.
 date: 2018-04-04
 ---
 

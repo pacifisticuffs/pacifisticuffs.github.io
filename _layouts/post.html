@@ -71,7 +71,7 @@
             <div class="entry-content">
               {% if page.image and page.image != "" %}
                 <figure class="figure">
-                  <img src="{{page.image}}" class="figure-img img-fluid rounded box-shadow" alt="{{ page.caption }}" />
+                  <img src="{{page.image}}" class="figure-img img-fluid rounded box-shadow" alt="{{ page.caption | strip_html }}" />
                   {% if page.caption and page.caption != "" %}
                   <figcaption class="figure-caption">{{ page.caption }}</figcaption>
                   {% endif %}
