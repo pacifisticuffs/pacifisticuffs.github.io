@@ -3,7 +3,7 @@ title: Let's Screw up Interview Questions
 categories: [js]
 date: 2018-04-20
 image: /images/posts/disappointment.jpg
-caption: Significant embarrassment and disappoint can lead to cases of becoming a statue
+caption: Significant embarrassment and disappointment can lead to cases of becoming a statue
 excerpt: I had a phone interview with a couple of fairly easy tech questions. My answers were incorrect (and non-functional), so I wanted to rewrite them.
 ---
 
