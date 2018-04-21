@@ -60,9 +60,9 @@ const maxAvg = list => {
   // curlies and returns added so it fits
   averages = list.map( arr => {
     return arr.reduce( ( accumulator, currentVal ) => {
-      return accumulator + currentVal ) / arr.length );
-    }
-  }
+      return accumulator + currentVal;
+    }) / arr.length;
+  });
 
   return Math.max.apply( null, averages );
 }
