@@ -79,9 +79,9 @@ const maxAvg = list => {
   // see above for step-by-step on this
   averages = list.map( arr => {
     return arr.reduce( ( accumulator, currentVal ) => {
-      return accumulator + currentVal ) / arr.length );
-    }
-  }
+      return accumulator + currentVal;
+    }) / arr.length;
+  });
 
   /**
    * Figured I'd explain what this `.reduce()` is doing. On the first
