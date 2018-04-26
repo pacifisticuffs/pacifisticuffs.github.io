@@ -68,7 +68,7 @@ console.log( munged );
 })();
 {% endhighlight %}
 
-It works! Unfortunately, the feedback from Matt was, "It's loopy." He's right, it is. It requires a loop over an array of a known length, then another loop (with a possible break) to search an array's values with an expanding length. I started to consider some use of the plethora of array methods like `.sort()`, but he came back with a solid hint, `const munged = {}`.
+It works! Unfortunately, the feedback from him was, "It's loopy." He's right, it is. It requires a loop over an array of a known length, then another loop (with a possible break) to search an array's values with an expanding length. I started to consider some use of the plethora of array methods like `.sort()`, but he came back with a solid hint, `const munged = {}`.
 
 Objects are great for aggregating data because keys must be unique, and they provide a fast and easily-understood method of comparison (easily-understood from the POV of someone else reading my code). With that in mind, I went and did this:
 
