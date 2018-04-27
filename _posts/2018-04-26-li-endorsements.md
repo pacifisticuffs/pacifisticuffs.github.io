@@ -8,7 +8,7 @@ caption:
 
 My friend is a smart bastard, and he's been kind enough to give me some ideas for exercises to prepare for interviews (see [infinite scroll]({% post_url 2018-04-17-infinite-scroller %})). Here is another question he tossed over, this time having to do with object manipulation.
 
-LinkedIn profiles typically have a skills section, where users can list things they're good at, and their connections can endorse them. In this short exercise we're going to get a list of un-grouped skills and prevent a summary of each skill, with all the users that have it. That is, given this data from the server:
+LinkedIn profiles typically have a skills section, where users can list things they're good at, and their connections can endorse them. In this short exercise we're going to get a list of un-grouped skills and present a summary of each skill, with all the users that have it. That is, given this data from the server:
 
 {% highlight js linenos %}
 [
